@@ -33,20 +33,20 @@ class AIRecommendationEngine:
         
         if recommendations is None:
             try:
-                # الحصول على المستخدم
+
                 user = User.objects.get(id=user_id)
                 
-                # دمج التوصيات من مصادر مختلفة
+
                 content_based = self._get_content_based_recommendations(user, limit)
                 collaborative = self._get_collaborative_recommendations(user, limit)
                 trending = self._get_trending_recommendations(limit)
                 
-                # دمج النتائج بأوزان مختلفة
+
                 recommendations = self._merge_recommendations(
                     content_based, collaborative, trending, limit
                 )
                 
-                # حفظ في الكاش لمدة ساعة
+
                 cache.set(cache_key, recommendations, 3600)
                 
             except Exception as e:
@@ -58,19 +58,19 @@ class AIRecommendationEngine:
     def _get_content_based_recommendations(self, user, limit):
         """توصيات بناءً على المحتوى"""
         try:
-            # الحصول على مهارات المستخدم المفضلة
+
             user_skills = user.skills_offered.all()[:5]
             
             if not user_skills:
                 return []
             
-            # إنشاء نص وصفي للمستخدم
+
             user_text = " ".join([
                 skill.title + " " + skill.description 
                 for skill in user_skills
             ])
             
-            # الحصول على جميع المهارات
+
             all_skills = Skill.objects.filter(is_active=True).exclude(
                 id__in=[skill.id for skill in user_skills]
             )
@@ -78,26 +78,26 @@ class AIRecommendationEngine:
             if not all_skills:
                 return []
             
-            # إنشاء نصوص المهارات
+
             skill_texts = [user_text] + [
                 skill.title + " " + skill.description 
                 for skill in all_skills
             ]
             
-            # حساب TF-IDF
+
             tfidf_matrix = self.vectorizer.fit_transform(skill_texts)
             
-            # حساب التشابه
+
             similarity_scores = cosine_similarity(
                 tfidf_matrix[0:1], tfidf_matrix[1:]
             ).flatten()
             
-            # ترتيب المهارات حسب التشابه
+
             skill_indices = similarity_scores.argsort()[::-1][:limit]
             
             recommendations = []
             for idx in skill_indices:
-                if similarity_scores[idx] > 0.1:  # حد أدنى للتشابه
+                if similarity_scores[idx] > 0.1: 
                     skill = all_skills[idx]
                     recommendations.append({
                         'skill': skill,
@@ -114,13 +114,13 @@ class AIRecommendationEngine:
     def _get_collaborative_recommendations(self, user, limit):
         """توصيات تعاونية بناءً على المستخدمين المشابهين"""
         try:
-            # البحث عن مستخدمين مشابهين
+
             similar_users = self._find_similar_users(user, 10)
             
             if not similar_users:
                 return []
             
-            # الحصول على مهارات المستخدمين المشابهين
+
             similar_user_skills = Skill.objects.filter(
                 exchanges_as_offered__requester__in=similar_users,
                 is_active=True
@@ -135,7 +135,7 @@ class AIRecommendationEngine:
             for skill in similar_user_skills:
                 recommendations.append({
                     'skill': skill,
-                    'score': min(skill.popularity / 10.0, 1.0),  # تطبيع النتيجة
+                    'score': min(skill.popularity / 10.0, 1.0), 
                     'reason': 'collaborative'
                 })
             
@@ -167,7 +167,7 @@ class AIRecommendationEngine:
             for skill in trending_skills:
                 recommendations.append({
                     'skill': skill,
-                    'score': min(skill.recent_orders / 5.0, 1.0),  # تطبيع النتيجة
+                    'score': min(skill.recent_orders / 5.0, 1.0),  
                     'reason': 'trending'
                 })
             
@@ -180,7 +180,7 @@ class AIRecommendationEngine:
     def _find_similar_users(self, user, limit):
         """البحث عن مستخدمين مشابهين"""
         try:
-            # المستخدمون الذين طلبوا نفس المهارات
+
             user_skills = set(user.skills_offered.values_list('id', flat=True))
             
             if not user_skills:
@@ -193,7 +193,7 @@ class AIRecommendationEngine:
             ).annotate(
                 common_skills=Count('exchanges_as_offered__skill_offered', distinct=True)
             ).filter(
-                common_skills__gte=2  # على الأقل مهارتان مشتركتان
+                common_skills__gte=2  
             ).order_by('-common_skills')[:limit]
             
             return similar_users
@@ -205,17 +205,17 @@ class AIRecommendationEngine:
     def _merge_recommendations(self, content_based, collaborative, trending, limit):
         """دمج التوصيات من مصادر مختلفة"""
         try:
-            # أوزان مختلفة لكل نوع
+
             weights = {
                 'content_based': 0.4,
                 'collaborative': 0.4,
                 'trending': 0.2
             }
             
-            # دمج جميع التوصيات
+
             all_recommendations = {}
             
-            # إضافة التوصيات المبنية على المحتوى
+
             for rec in content_based:
                 skill_id = rec['skill'].id
                 if skill_id not in all_recommendations:
@@ -229,7 +229,7 @@ class AIRecommendationEngine:
                 )
                 all_recommendations[skill_id]['reasons'].append('content_based')
             
-            # إضافة التوصيات التعاونية
+
             for rec in collaborative:
                 skill_id = rec['skill'].id
                 if skill_id not in all_recommendations:
@@ -243,7 +243,7 @@ class AIRecommendationEngine:
                 )
                 all_recommendations[skill_id]['reasons'].append('collaborative')
             
-            # إضافة المهارات الرائجة
+
             for rec in trending:
                 skill_id = rec['skill'].id
                 if skill_id not in all_recommendations:
@@ -257,7 +257,7 @@ class AIRecommendationEngine:
                 )
                 all_recommendations[skill_id]['reasons'].append('trending')
             
-            # ترتيب النتائج النهائية
+
             final_recommendations = sorted(
                 all_recommendations.values(),
                 key=lambda x: x['total_score'],
@@ -279,23 +279,23 @@ class AIRecommendationEngine:
             try:
                 skill = Skill.objects.get(id=skill_id, is_active=True)
                 
-                # المهارات من نفس الفئة
+
                 category_skills = Skill.objects.filter(
                     category=skill.category,
                     is_active=True
                 ).exclude(id=skill_id)
                 
-                # المهارات بنفس التاجز
+
                 tag_skills = Skill.objects.filter(
                     tags__overlap=skill.tags,
                     is_active=True
                 ).exclude(id=skill_id)
                 
-                # دمج النتائج
+
                 all_skills = (category_skills | tag_skills).distinct()
                 
                 if all_skills.exists():
-                    # حساب التشابه النصي
+
                     skill_text = skill.title + " " + skill.description
                     skill_texts = [skill_text] + [
                         s.title + " " + s.description for s in all_skills
@@ -306,7 +306,7 @@ class AIRecommendationEngine:
                         tfidf_matrix[0:1], tfidf_matrix[1:]
                     ).flatten()
                     
-                    # ترتيب المهارات
+
                     skill_indices = similarity_scores.argsort()[::-1][:limit]
                     
                     similar_skills = []
@@ -320,7 +320,7 @@ class AIRecommendationEngine:
                 else:
                     similar_skills = []
                 
-                # حفظ في الكاش لمدة ساعة
+
                 cache.set(cache_key, similar_skills, 3600)
                 
             except Exception as e:
@@ -332,7 +332,7 @@ class AIRecommendationEngine:
     def update_user_preferences(self, user_id, skill_id, action):
         """تحديث تفضيلات المستخدم بناءً على الأفعال"""
         try:
-            # مسح الكاش للمستخدم
+
             cache_keys = [
                 f"user_recommendations_{user_id}_*",
                 f"similar_skills_{skill_id}_*"
@@ -341,7 +341,7 @@ class AIRecommendationEngine:
             for key_pattern in cache_keys:
                 cache.delete_pattern(key_pattern)
             
-            # يمكن إضافة منطق إضافي لتحديث التفضيلات
+
             self.logger.info(f"Updated preferences for user {user_id}, skill {skill_id}, action {action}")
             
         except Exception as e:

@@ -30,7 +30,7 @@ class AnalyticsService:
                 end_date = timezone.now()
                 start_date = end_date - timedelta(days=days)
                 
-                # إحصائيات المستخدمين
+
                 total_users = User.objects.count()
                 new_users = User.objects.filter(
                     date_joined__gte=start_date
@@ -39,14 +39,14 @@ class AnalyticsService:
                     last_login__gte=start_date
                 ).count()
                 
-                # إحصائيات المهارات
+
                 total_skills = Skill.objects.filter(is_active=True).count()
                 new_skills = Skill.objects.filter(
                     created_at__gte=start_date,
                     is_active=True
                 ).count()
                 
-                # إحصائيات الطلبات
+
                 from points.models import Order
                 total_orders = Order.objects.count()
                 new_orders = Order.objects.filter(
@@ -57,7 +57,7 @@ class AnalyticsService:
                     updated_at__gte=start_date
                 ).count()
                 
-                # الإيرادات
+
                 total_revenue = Payment.objects.filter(
                     status='completed'
                 ).aggregate(
@@ -71,7 +71,7 @@ class AnalyticsService:
                     total=Sum('amount')
                 )['total'] or 0
                 
-                # معدل النمو
+
                 previous_start = start_date - timedelta(days=days)
                 previous_users = User.objects.filter(
                     date_joined__gte=previous_start,
@@ -112,7 +112,7 @@ class AnalyticsService:
                     }
                 }
                 
-                # حفظ في الكاش لمدة ساعة
+
                 cache.set(cache_key, overview, 3600)
                 
             except Exception as e:
@@ -132,12 +132,12 @@ class AnalyticsService:
                 end_date = timezone.now()
                 start_date = end_date - timedelta(days=days)
                 
-                # إحصائيات الطلبات
+
                 from points.models import Order
                 user_orders = Order.objects.filter(user=user)
                 recent_orders = user_orders.filter(created_at__gte=start_date)
                 
-                # إحصائيات النقاط
+
                 points_earned = PointsTransaction.objects.filter(
                     user=user,
                     transaction_type='earn',
@@ -150,14 +150,14 @@ class AnalyticsService:
                     created_at__gte=start_date
                 ).aggregate(total=Sum('amount'))['total'] or 0
                 
-                # المهارات المفضلة
+
                 favorite_categories = user_orders.values(
                     'skill__category__name_en'
                 ).annotate(
                     count=Count('id')
                 ).order_by('-count')[:5]
                 
-                # معدل التقييم
+
                 avg_rating_given = Review.objects.filter(
                     reviewer=user,
                     created_at__gte=start_date
@@ -195,7 +195,7 @@ class AnalyticsService:
                     }
                 }
                 
-                # حفظ في الكاش لمدة 30 دقيقة
+
                 cache.set(cache_key, analytics, 1800)
                 
             except Exception as e:
@@ -214,7 +214,7 @@ class AnalyticsService:
                 end_date = timezone.now()
                 start_date = end_date - timedelta(days=days)
                 
-                # أكثر المهارات طلباً
+
                 from points.models import Order
                 top_skills = Skill.objects.filter(
                     is_active=True
@@ -228,7 +228,7 @@ class AnalyticsService:
                     total_revenue=Sum('orders__points_amount')
                 ).order_by('-recent_orders')[:10]
                 
-                # أكثر الفئات شعبية
+
                 top_categories = Category.objects.annotate(
                     total_skills=Count('skills', filter=Q(skills__is_active=True)),
                     total_orders=Count('skills__orders'),
@@ -238,14 +238,14 @@ class AnalyticsService:
                     )
                 ).order_by('-recent_orders')[:5]
                 
-                # إحصائيات التقييمات
+
                 rating_distribution = Review.objects.filter(
                     created_at__gte=start_date
                 ).values('rating').annotate(
                     count=Count('id')
                 ).order_by('rating')
                 
-                # المهارات الجديدة الواعدة
+
                 promising_skills = Skill.objects.filter(
                     created_at__gte=start_date,
                     is_active=True
@@ -295,7 +295,7 @@ class AnalyticsService:
                     }
                 }
                 
-                # حفظ في الكاش لمدة ساعة
+
                 cache.set(cache_key, analytics, 3600)
                 
             except Exception as e:
@@ -314,7 +314,7 @@ class AnalyticsService:
                 end_date = timezone.now()
                 start_date = end_date - timedelta(days=days)
                 
-                # إجمالي الإيرادات
+
                 total_payments = Payment.objects.filter(
                     status='completed',
                     created_at__gte=start_date
@@ -323,7 +323,7 @@ class AnalyticsService:
                     count=Count('id')
                 )
                 
-                # الإيرادات اليومية
+
                 daily_revenue = Payment.objects.filter(
                     status='completed',
                     created_at__gte=start_date
@@ -334,7 +334,7 @@ class AnalyticsService:
                     transactions=Count('id')
                 ).order_by('date')
                 
-                # معاملات النقاط
+
                 points_transactions = PointsTransaction.objects.filter(
                     created_at__gte=start_date
                 ).values('transaction_type').annotate(
@@ -342,10 +342,10 @@ class AnalyticsService:
                     count=Count('id')
                 )
                 
-                # متوسط قيمة المعاملة
+
                 avg_transaction_value = total_payments['total_amount'] / total_payments['count'] if total_payments['count'] > 0 else 0
                 
-                # أكثر طرق الدفع استخداماً
+
                 payment_methods = Payment.objects.filter(
                     created_at__gte=start_date
                 ).values('payment_method').annotate(
@@ -376,7 +376,7 @@ class AnalyticsService:
                     }
                 }
                 
-                # حفظ في الكاش لمدة ساعة
+
                 cache.set(cache_key, analytics, 3600)
                 
             except Exception as e:
@@ -391,7 +391,7 @@ class AnalyticsService:
             end_date = timezone.now()
             start_date = end_date - timedelta(days=days)
             
-            # عدد الأيام النشطة
+
             from points.models import Order
             active_days = Order.objects.filter(
                 user=user,
@@ -400,10 +400,10 @@ class AnalyticsService:
                 date=TruncDate('created_at')
             ).values('date').distinct().count()
             
-            # نسبة النشاط
+
             activity_ratio = active_days / days if days > 0 else 0
             
-            # تحديد مستوى النشاط
+
             if activity_ratio >= 0.7:
                 return 'high'
             elif activity_ratio >= 0.3:
@@ -425,7 +425,7 @@ class AnalyticsService:
                 end_date = timezone.now()
                 start_date = end_date - timedelta(days=months * 30)
                 
-                # نمو المستخدمين الشهري
+
                 user_growth = User.objects.filter(
                     date_joined__gte=start_date
                 ).annotate(
@@ -434,7 +434,7 @@ class AnalyticsService:
                     new_users=Count('id')
                 ).order_by('month')
                 
-                # نمو المهارات الشهري
+
                 skill_growth = Skill.objects.filter(
                     created_at__gte=start_date
                 ).annotate(
@@ -443,7 +443,7 @@ class AnalyticsService:
                     new_skills=Count('id')
                 ).order_by('month')
                 
-                # نمو الإيرادات الشهري
+
                 revenue_growth = Payment.objects.filter(
                     status='completed',
                     created_at__gte=start_date
@@ -472,7 +472,7 @@ class AnalyticsService:
                     }
                 }
                 
-                # حفظ في الكاش لمدة 6 ساعات
+
                 cache.set(cache_key, trends, 21600)
                 
             except Exception as e:

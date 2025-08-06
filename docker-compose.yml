@@ -1,5 +1,4 @@
 services:
-  # قاعدة البيانات PostgreSQL
   db:
     image: postgres:15
     container_name: skillswap_db
@@ -21,7 +20,6 @@ services:
       timeout: 5s
       retries: 5
 
-  # Redis للتخزين المؤقت والرسائل
   redis:
     image: redis:7-alpine
     container_name: skillswap_redis
@@ -38,7 +36,6 @@ services:
       timeout: 5s
       retries: 5
 
-  # تطبيق Django الرئيسي
   web:
     build: .
     container_name: skillswap_web
@@ -85,7 +82,6 @@ services:
       timeout: 10s
       retries: 3
 
-  # Celery Worker للمهام الخلفية
   celery:
     build: .
     container_name: skillswap_celery
@@ -112,7 +108,6 @@ services:
       timeout: 10s
       retries: 3
 
-  # Celery Beat للمهام المجدولة
   celery-beat:
     build: .
     container_name: skillswap_celery_beat
@@ -134,7 +129,6 @@ services:
       - skillswap-network
     restart: unless-stopped
 
-  # Flower لمراقبة Celery
   flower:
     build: .
     container_name: skillswap_flower
@@ -159,12 +153,10 @@ services:
       - skillswap-network
     restart: unless-stopped
 
-# الشبكات
 networks:
   skillswap-network:
     driver: bridge
 
-# التخزين المستمر
 volumes:
   postgres_data:
   redis_data:
