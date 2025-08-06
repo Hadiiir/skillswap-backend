@@ -1,0 +1,946 @@
+
+Watching for file changes with StatReloader
+/app/skillswap/settings.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 1604
+"GET /static/drf-yasg/insQ.min.js HTTP/1.1" 200 2093
+"GET /static/drf-yasg/style.css HTTP/1.1" 200 1047
+"GET /static/drf-yasg/immutable.min.js HTTP/1.1" 200 56904
+"GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 200 145206
+"GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 200 14964
+"GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 200 322863
+"GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 200 1046583
+"GET /?format=openapi HTTP/1.1" 200 38440
+"GET /static/drf-yasg/swagger-ui-dist/favicon-32x32.png HTTP/1.1" 200 628
+"POST /api/accounts/login/ HTTP/1.1" 200 969
+Bad Request: /api/accounts/register/
+"POST /api/accounts/register/ HTTP/1.1" 400 58
+Bad Request: /api/accounts/register/
+"POST /api/accounts/register/ HTTP/1.1" 400 42
+"POST /api/accounts/register/ HTTP/1.1" 201 999
+Unauthorized: /api/accounts/logout/
+"POST /api/accounts/logout/ HTTP/1.1" 401 58
+Unauthorized: /api/accounts/logout/
+"POST /api/accounts/logout/ HTTP/1.1" 401 58
+Unauthorized: /api/accounts/logout/
+"POST /api/accounts/logout/ HTTP/1.1" 401 58
+Unauthorized: /api/accounts/logout/
+"POST /api/accounts/logout/ HTTP/1.1" 401 58
+Unauthorized: /api/accounts/logout/
+"POST /api/accounts/logout/ HTTP/1.1" 401 58
+Unauthorized: /api/accounts/logout/
+"POST /api/accounts/logout/ HTTP/1.1" 401 58
+"POST /api/accounts/refresh/ HTTP/1.1" 200 241
+"GET /api/skills/categories/ HTTP/1.1" 200 2
+Not Found: /api/skills/categories/1/
+"GET /api/skills/categories/1/ HTTP/1.1" 404 30
+Unauthorized: /api/chat/rooms/2/send/
+"POST /api/chat/rooms/2/send/ HTTP/1.1" 401 58
+Unauthorized: /api/accounts/logout/
+"POST /api/accounts/logout/ HTTP/1.1" 401 107
+Unauthorized: /api/accounts/logout/
+"POST /api/accounts/logout/ HTTP/1.1" 401 107
+Unauthorized: /api/accounts/logout/
+"POST /api/accounts/logout/ HTTP/1.1" 401 107
+Bad Request: /api/accounts/logout/
+"POST /api/accounts/logout/ HTTP/1.1" 400 33
+Bad Request: /api/accounts/logout/
+"POST /api/accounts/logout/ HTTP/1.1" 400 33
+Bad Request: /api/accounts/logout/
+"POST /api/accounts/logout/ HTTP/1.1" 400 33
+Bad Request: /api/accounts/logout/
+"POST /api/accounts/logout/ HTTP/1.1" 400 33
+Bad Request: /api/accounts/register/
+"POST /api/accounts/register/ HTTP/1.1" 400 58
+"POST /api/accounts/register/ HTTP/1.1" 201 982
+Bad Request: /api/accounts/logout/
+"POST /api/accounts/logout/ HTTP/1.1" 400 33
+/home/hader/skillswap-backend/skillswap/settings.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 1604
+"GET /static/drf-yasg/style.css HTTP/1.1" 304 0
+"GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 304 0
+"GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 304 0
+"GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 304 0
+"GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 304 0
+"GET /static/drf-yasg/insQ.min.js HTTP/1.1" 304 0
+"GET /static/drf-yasg/immutable.min.js HTTP/1.1" 304 0
+"GET /?format=openapi HTTP/1.1" 200 38440
+"GET / HTTP/1.1" 200 1604
+"GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 304 0
+"GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 304 0
+"GET /static/drf-yasg/insQ.min.js HTTP/1.1" 304 0
+"GET /static/drf-yasg/immutable.min.js HTTP/1.1" 304 0
+"GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 304 0
+"GET /static/drf-yasg/swagger-ui-dist/favicon-32x32.png HTTP/1.1" 304 0
+"GET /?format=openapi HTTP/1.1" 200 38440
+"POST /api/accounts/login/ HTTP/1.1" 200 969
+"POST /api/accounts/logout/ HTTP/1.1" 200 37
+Unauthorized: /api/accounts/refresh/
+"POST /api/accounts/refresh/ HTTP/1.1" 401 33
+Unauthorized: /api/accounts/refresh/
+"POST /api/accounts/refresh/ HTTP/1.1" 401 33
+Unauthorized: /api/accounts/refresh/
+"POST /api/accounts/refresh/ HTTP/1.1" 401 33
+Not Found: /api/chat/rooms/1/send/
+"POST /api/chat/rooms/1/send/ HTTP/1.1" 404 31
+Not Found: /api/chat/rooms/1/send/
+"POST /api/chat/rooms/1/send/ HTTP/1.1" 404 31
+Not Found: /api/chat/rooms/1/messages/
+"GET /api/chat/rooms/1/messages/ HTTP/1.1" 404 31
+"GET /api/accounts/profile/ HTTP/1.1" 200 467
+Bad Request: /api/accounts/profile/
+"PUT /api/accounts/profile/ HTTP/1.1" 400 34
+"PUT /api/accounts/profile/ HTTP/1.1" 200 575
+"PATCH /api/accounts/profile/ HTTP/1.1" 200 580
+Bad Request: /api/skills/
+"POST /api/skills/ HTTP/1.1" 400 154
+Bad Request: /api/skills/
+"POST /api/skills/ HTTP/1.1" 400 58
+Bad Request: /api/skills/
+"POST /api/skills/ HTTP/1.1" 400 58
+Bad Request: /api/skills/
+"POST /api/skills/ HTTP/1.1" 400 58
+Bad Request: /api/skills/
+"POST /api/skills/ HTTP/1.1" 400 58
+Internal Server Error: /api/skills/
+Traceback (most recent call last):
+  File "/home/hader/skillswap-backend/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/venv/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/venv/lib/python3.12/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/venv/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/venv/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/hader/skillswap-backend/venv/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/hader/skillswap-backend/venv/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/skills/views.py", line 186, in post
+    skill = serializer.save(user=request.user)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/venv/lib/python3.12/site-packages/rest_framework/serializers.py", line 208, in save
+    self.instance = self.create(validated_data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/skills/serializers.py", line 72, in create
+    validated_data['user'] = self.context['request'].user
+                             ~~~~~~~~~~~~^^^^^^^^^^^
+KeyError: 'request'
+"POST /api/skills/ HTTP/1.1" 500 24968
+/home/hader/skillswap-backend/skillswap/settings.py changed, reloading.
+Watching for file changes with StatReloader
+/home/hader/skillswap-backend/skillswap/settings.py changed, reloading.
+Watching for file changes with StatReloader
+/home/hader/skillswap-backend/skillswap/settings.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+/home/hader/skillswap-backend/skillswap/settings.py changed, reloading.
+INFO 2025-08-04 07:16:06,841 autoreload 1326132 133556692508800 Watching for file changes with StatReloader
+INFO 2025-08-04 07:16:46,254 autoreload 1326132 133556692508800 /home/hader/skillswap-backend/skillswap/urls.py changed, reloading.
+INFO 2025-08-04 07:16:47,007 autoreload 1326758 129863809392768 Watching for file changes with StatReloader
+INFO 2025-08-04 07:17:30,488 autoreload 1326758 129863809392768 /home/hader/skillswap-backend/manage.py changed, reloading.
+INFO 2025-08-04 07:17:31,265 autoreload 1327539 140385959006336 Watching for file changes with StatReloader
+INFO 2025-08-04 07:17:43,794 autoreload 1327807 135623988936832 Watching for file changes with StatReloader
+INFO 2025-08-04 07:23:37,599 autoreload 1327807 135623988936832 /home/hader/skillswap-backend/skillswap/urls.py changed, reloading.
+INFO 2025-08-04 07:23:38,409 autoreload 1333814 126626303426688 Watching for file changes with StatReloader
+INFO 2025-08-04 07:23:46,216 autoreload 1333814 126626303426688 /home/hader/skillswap-backend/skillswap/urls.py changed, reloading.
+INFO 2025-08-04 07:23:47,079 autoreload 1333933 127555347034240 Watching for file changes with StatReloader
+INFO 2025-08-04 07:24:04,098 autoreload 1333933 127555347034240 /home/hader/skillswap-backend/skillswap/settings.py changed, reloading.
+INFO 2025-08-04 07:24:05,116 autoreload 1334344 129681619783808 Watching for file changes with StatReloader
+INFO 2025-08-04 07:31:43,184 autoreload 1334344 129681619783808 /home/hader/skillswap-backend/accounts/models.py changed, reloading.
+INFO 2025-08-04 07:31:44,054 autoreload 1341830 131233132593280 Watching for file changes with StatReloader
+INFO 2025-08-04 07:36:43,158 autoreload 1346890 133567064412288 Watching for file changes with StatReloader
+INFO 2025-08-04 07:43:05,564 autoreload 1353441 130844290662528 Watching for file changes with StatReloader
+INFO 2025-08-04 07:50:56,124 autoreload 1361180 136402938753152 Watching for file changes with StatReloader
+INFO 2025-08-04 07:55:18,323 basehttp 1361180 136402842941120 "GET / HTTP/1.1" 200 1553
+INFO 2025-08-04 07:55:18,362 basehttp 1361180 136402842941120 "GET /static/drf-yasg/style.css HTTP/1.1" 304 0
+INFO 2025-08-04 07:55:18,371 basehttp 1361180 136402826155712 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 304 0
+INFO 2025-08-04 07:55:18,373 basehttp 1361180 136402834548416 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 304 0
+INFO 2025-08-04 07:55:18,373 basehttp 1361180 136402817763008 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 304 0
+INFO 2025-08-04 07:55:18,375 basehttp 1361180 136402809370304 "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 304 0
+INFO 2025-08-04 07:55:18,377 basehttp 1361180 136402457065152 "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 304 0
+INFO 2025-08-04 07:55:18,383 basehttp 1361180 136402826155712 "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 304 0
+INFO 2025-08-04 07:55:18,776 basehttp 1361180 136402826155712 "GET /?format=openapi HTTP/1.1" 200 38329
+INFO 2025-08-04 07:55:52,129 autoreload 1366331 138365013659776 Watching for file changes with StatReloader
+INFO 2025-08-04 07:55:57,637 basehttp 1366331 138364850271936 "GET / HTTP/1.1" 200 1553
+INFO 2025-08-04 07:55:57,973 basehttp 1366331 138364850271936 "GET /?format=openapi HTTP/1.1" 200 38329
+INFO 2025-08-04 07:56:44,552 basehttp 1366331 138364850271936 "POST /api/accounts/login/ HTTP/1.1" 200 1088
+WARNING 2025-08-04 07:57:17,668 log 1366331 138364850271936 Unauthorized: /api/accounts/logout/
+WARNING 2025-08-04 07:57:17,668 basehttp 1366331 138364850271936 "POST /api/accounts/logout/ HTTP/1.1" 401 58
+WARNING 2025-08-04 07:57:51,415 log 1366331 138364850271936 Unauthorized: /api/accounts/logout/
+WARNING 2025-08-04 07:57:51,416 basehttp 1366331 138364850271936 "POST /api/accounts/logout/ HTTP/1.1" 401 58
+INFO 2025-08-04 07:58:35,191 basehttp 1366331 138364850271936 "POST /api/accounts/refresh/ HTTP/1.1" 200 244
+WARNING 2025-08-04 07:58:51,792 log 1366331 138364850271936 Unauthorized: /api/accounts/profile/
+WARNING 2025-08-04 07:58:51,792 basehttp 1366331 138364850271936 "GET /api/accounts/profile/ HTTP/1.1" 401 58
+WARNING 2025-08-04 08:01:50,522 log 1366331 138364850271936 Unauthorized: /api/accounts/profile/
+WARNING 2025-08-04 08:01:50,523 basehttp 1366331 138364850271936 "PUT /api/accounts/profile/ HTTP/1.1" 401 58
+WARNING 2025-08-04 08:02:09,865 log 1366331 138364850271936 Unauthorized: /api/accounts/profile/
+WARNING 2025-08-04 08:02:09,866 basehttp 1366331 138364850271936 "PATCH /api/accounts/profile/ HTTP/1.1" 401 58
+WARNING 2025-08-04 08:07:12,656 log 1366331 138364841879232 Bad Request: /api/accounts/logout/
+WARNING 2025-08-04 08:07:12,656 basehttp 1366331 138364841879232 "POST /api/accounts/logout/ HTTP/1.1" 400 33
+INFO 2025-08-04 08:07:35,535 basehttp 1366331 138364841879232 "POST /api/accounts/refresh/ HTTP/1.1" 200 244
+WARNING 2025-08-04 08:08:21,366 log 1366331 138364841879232 Bad Request: /api/accounts/logout/
+WARNING 2025-08-04 08:08:21,367 basehttp 1366331 138364841879232 "POST /api/accounts/logout/ HTTP/1.1" 400 33
+WARNING 2025-08-04 08:08:22,746 log 1366331 138364841879232 Bad Request: /api/accounts/logout/
+WARNING 2025-08-04 08:08:22,747 basehttp 1366331 138364841879232 "POST /api/accounts/logout/ HTTP/1.1" 400 33
+INFO 2025-08-04 08:08:40,323 basehttp 1366331 138364841879232 "GET /api/accounts/skills/ HTTP/1.1" 200 2
+INFO 2025-08-04 08:09:14,873 basehttp 1366331 138364841879232 "POST /api/accounts/skills/ HTTP/1.1" 201 136
+INFO 2025-08-04 08:09:35,222 basehttp 1366331 138364841879232 "GET /api/accounts/skills/33/ HTTP/1.1" 200 136
+INFO 2025-08-04 08:10:09,056 basehttp 1366331 138364841879232 "PUT /api/accounts/skills/33/ HTTP/1.1" 200 136
+INFO 2025-08-04 08:10:36,375 basehttp 1366331 138364841879232 "PATCH /api/accounts/skills/33/ HTTP/1.1" 200 136
+INFO 2025-08-04 08:10:47,073 basehttp 1366331 138364841879232 "DELETE /api/accounts/skills/33/ HTTP/1.1" 204 0
+INFO 2025-08-04 08:10:57,134 basehttp 1366331 138364841879232 "GET /api/chat/rooms/ HTTP/1.1" 200 2
+WARNING 2025-08-04 08:11:13,177 log 1366331 138364841879232 Not Found: /api/chat/rooms/33/
+WARNING 2025-08-04 08:11:13,178 basehttp 1366331 138364841879232 "GET /api/chat/rooms/33/ HTTP/1.1" 404 31
+INFO 2025-08-04 08:11:26,554 basehttp 1366331 138364841879232 "GET /api/notifications/ HTTP/1.1" 200 2
+INFO 2025-08-04 08:11:35,079 basehttp 1366331 138364841879232 "POST /api/notifications/read-all/ HTTP/1.1" 200 20
+WARNING 2025-08-04 08:11:51,383 log 1366331 138364841879232 Not Found: /api/notifications/33/read/
+WARNING 2025-08-04 08:11:51,383 basehttp 1366331 138364841879232 "POST /api/notifications/33/read/ HTTP/1.1" 404 34
+WARNING 2025-08-04 08:12:04,724 log 1366331 138364841879232 Not Found: /api/notifications/3/read/
+WARNING 2025-08-04 08:12:04,725 basehttp 1366331 138364841879232 "POST /api/notifications/3/read/ HTTP/1.1" 404 34
+INFO 2025-08-04 08:12:15,356 basehttp 1366331 138364841879232 "GET /api/payments/history/ HTTP/1.1" 200 2
+INFO 2025-08-04 08:12:38,377 basehttp 1366331 138364841879232 "POST /api/payments/paymob/ HTTP/1.1" 200 57
+INFO 2025-08-04 08:12:53,323 basehttp 1366331 138364841879232 "POST /api/payments/paypal/ HTTP/1.1" 200 57
+INFO 2025-08-04 08:13:04,384 basehttp 1366331 138364841879232 "POST /api/payments/stripe/ HTTP/1.1" 200 57
+INFO 2025-08-04 08:13:11,951 basehttp 1366331 138364841879232 "GET /api/points/orders/ HTTP/1.1" 200 2
+WARNING 2025-08-04 08:13:27,766 log 1366331 138364841879232 Bad Request: /api/points/orders/
+WARNING 2025-08-04 08:13:27,767 basehttp 1366331 138364841879232 "POST /api/points/orders/ HTTP/1.1" 400 55
+WARNING 2025-08-04 08:14:40,357 log 1366331 138364841879232 Bad Request: /api/points/orders/
+WARNING 2025-08-04 08:14:40,357 basehttp 1366331 138364841879232 "POST /api/points/orders/ HTTP/1.1" 400 55
+ERROR 2025-08-04 08:14:54,195 log 1366331 138364841879232 Internal Server Error: /api/points/packages/
+Traceback (most recent call last):
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/points/views.py", line 28, in get
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/rest_framework/serializers.py", line 797, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/rest_framework/serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/rest_framework/serializers.py", line 716, in to_representation
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/rest_framework/serializers.py", line 527, in to_representation
+    attribute = field.get_attribute(instance)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/rest_framework/fields.py", line 437, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/rest_framework/fields.py", line 104, in get_attribute
+    instance = getattr(instance, attr)
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/points/models.py", line 29, in discounted_price
+    return self.price * (1 - self.discount_percentage / 100)
+           ~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+ERROR 2025-08-04 08:14:54,198 basehttp 1366331 138364841879232 "GET /api/points/packages/ HTTP/1.1" 500 26031
+INFO 2025-08-04 08:17:49,292 basehttp 1366331 138364841879232 "GET /api/points/transactions/ HTTP/1.1" 200 2
+INFO 2025-08-04 08:18:03,217 basehttp 1366331 138364841879232 "GET /api/reviews/ HTTP/1.1" 200 2
+WARNING 2025-08-04 08:18:16,816 log 1366331 138364841879232 Bad Request: /api/reviews/
+WARNING 2025-08-04 08:18:16,816 basehttp 1366331 138364841879232 "POST /api/reviews/ HTTP/1.1" 400 109
+WARNING 2025-08-04 08:18:36,310 log 1366331 138364841879232 Bad Request: /api/reviews/
+WARNING 2025-08-04 08:18:36,310 basehttp 1366331 138364841879232 "POST /api/reviews/ HTTP/1.1" 400 52
+INFO 2025-08-04 08:18:52,602 basehttp 1366331 138364841879232 "POST /api/reviews/ HTTP/1.1" 201 2114
+INFO 2025-08-04 08:19:20,267 basehttp 1366331 138364841879232 "GET /api/reviews/skills/1/ HTTP/1.1" 200 33072
+WARNING 2025-08-04 08:19:41,134 log 1366331 138364841879232 Not Found: /api/reviews/1/
+WARNING 2025-08-04 08:19:41,135 basehttp 1366331 138364841879232 "GET /api/reviews/1/ HTTP/1.1" 404 28
+WARNING 2025-08-04 08:19:52,056 log 1366331 138364841879232 Not Found: /api/reviews/33/
+WARNING 2025-08-04 08:19:52,056 basehttp 1366331 138364841879232 "GET /api/reviews/33/ HTTP/1.1" 404 28
+INFO 2025-08-04 08:20:07,062 basehttp 1366331 138364841879232 "GET /api/skills/categories/ HTTP/1.1" 200 9013
+INFO 2025-08-04 08:20:21,435 basehttp 1366331 138364841879232 "GET /api/skills/categories/3/ HTTP/1.1" 200 305
+WARNING 2025-08-04 08:22:49,053 log 1366331 138364841879232 Bad Request: /api/skills/
+WARNING 2025-08-04 08:22:49,054 basehttp 1366331 138364841879232 "POST /api/skills/ HTTP/1.1" 400 154
+WARNING 2025-08-04 08:30:10,234 log 1366331 138364841879232 Bad Request: /api/skills/
+WARNING 2025-08-04 08:30:10,235 basehttp 1366331 138364841879232 "POST /api/skills/ HTTP/1.1" 400 38
+WARNING 2025-08-04 08:37:28,752 log 1366331 138364841879232 Bad Request: /api/skills/
+WARNING 2025-08-04 08:37:28,752 basehttp 1366331 138364841879232 "POST /api/skills/ HTTP/1.1" 400 38
+WARNING 2025-08-04 08:46:44,725 log 1366331 138364841879232 Bad Request: /api/skills/
+WARNING 2025-08-04 08:46:44,725 basehttp 1366331 138364841879232 "POST /api/skills/ HTTP/1.1" 400 38
+ERROR 2025-08-04 08:46:53,875 log 1366331 138364841879232 Internal Server Error: /api/skills/
+Traceback (most recent call last):
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/skills/views.py", line 186, in post
+    skill = serializer.save(user=request.user)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/rest_framework/serializers.py", line 210, in save
+    self.instance = self.create(validated_data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/skills/serializers.py", line 72, in create
+    validated_data['user'] = self.context['request'].user
+                             ~~~~~~~~~~~~^^^^^^^^^^^
+KeyError: 'request'
+ERROR 2025-08-04 08:46:53,877 basehttp 1366331 138364841879232 "POST /api/skills/ HTTP/1.1" 500 24861
+ERROR 2025-08-04 08:49:40,783 log 1366331 138364841879232 Internal Server Error: /api/skills/
+Traceback (most recent call last):
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/skills/views.py", line 186, in post
+    skill = serializer.save(user=request.user)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/rest_framework/serializers.py", line 210, in save
+    self.instance = self.create(validated_data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/skills/serializers.py", line 72, in create
+    validated_data['user'] = self.context['request'].user
+                             ~~~~~~~~~~~~^^^^^^^^^^^
+KeyError: 'request'
+ERROR 2025-08-04 08:49:40,784 basehttp 1366331 138364841879232 "POST /api/skills/ HTTP/1.1" 500 24861
+INFO 2025-08-04 08:50:28,073 basehttp 1366331 138364841879232 "GET /api/skills/categories/ HTTP/1.1" 200 9013
+INFO 2025-08-04 08:50:37,793 basehttp 1366331 138364841879232 "GET /api/skills/categories/3/ HTTP/1.1" 200 305
+ERROR 2025-08-04 08:51:29,626 log 1366331 138364841879232 Internal Server Error: /api/skills/
+Traceback (most recent call last):
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/skills/views.py", line 186, in post
+    skill = serializer.save(user=request.user)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/rest_framework/serializers.py", line 210, in save
+    self.instance = self.create(validated_data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/skills/serializers.py", line 72, in create
+    validated_data['user'] = self.context['request'].user
+                             ~~~~~~~~~~~~^^^^^^^^^^^
+KeyError: 'request'
+ERROR 2025-08-04 08:51:29,629 basehttp 1366331 138364841879232 "POST /api/skills/ HTTP/1.1" 500 24861
+INFO 2025-08-04 08:51:44,965 basehttp 1366331 138364841879232 "GET /api/skills/3/ HTTP/1.1" 200 4176
+WARNING 2025-08-04 08:52:26,855 log 1366331 138364841879232 Forbidden: /api/skills/3/
+WARNING 2025-08-04 08:52:26,855 basehttp 1366331 138364841879232 "DELETE /api/skills/3/ HTTP/1.1" 403 47
+INFO 2025-08-04 08:54:20,730 basehttp 1366331 138364841879232 "GET /api/reviews/skills/1/ HTTP/1.1" 200 33072
+WARNING 2025-08-04 08:54:30,281 log 1366331 138364841879232 Not Found: /api/reviews/1/
+WARNING 2025-08-04 08:54:30,281 basehttp 1366331 138364841879232 "GET /api/reviews/1/ HTTP/1.1" 404 28
+WARNING 2025-08-04 08:58:05,623 log 1366331 138364841879232 Unauthorized: /api/reviews/1/
+WARNING 2025-08-04 08:58:05,623 basehttp 1366331 138364841879232 "PUT /api/reviews/1/ HTTP/1.1" 401 172
+WARNING 2025-08-04 08:58:41,272 log 1366331 138364841879232 Unauthorized: /api/reviews/1/
+WARNING 2025-08-04 08:58:41,272 basehttp 1366331 138364841879232 "PATCH /api/reviews/1/ HTTP/1.1" 401 172
+WARNING 2025-08-04 08:59:18,875 log 1366331 138364841879232 Unauthorized: /api/skills/3/
+WARNING 2025-08-04 08:59:18,875 basehttp 1366331 138364841879232 "GET /api/skills/3/ HTTP/1.1" 401 172
+WARNING 2025-08-04 09:01:48,936 log 1366331 138364841879232 Unauthorized: /api/points/orders/
+WARNING 2025-08-04 09:01:48,936 basehttp 1366331 138364841879232 "POST /api/points/orders/ HTTP/1.1" 401 172
+WARNING 2025-08-04 09:02:16,357 log 1366331 138364841879232 Unauthorized: /api/points/orders/2/
+WARNING 2025-08-04 09:02:16,358 basehttp 1366331 138364841879232 "GET /api/points/orders/2/ HTTP/1.1" 401 172
+WARNING 2025-08-04 09:03:30,183 log 1366331 138364841879232 Unauthorized: /api/chat/rooms/1/messages/
+WARNING 2025-08-04 09:03:30,183 basehttp 1366331 138364841879232 "GET /api/chat/rooms/1/messages/ HTTP/1.1" 401 172
+INFO 2025-08-05 08:13:45,144 basehttp 1366331 138364841879232 "GET / HTTP/1.1" 200 1553
+INFO 2025-08-05 08:13:45,162 basehttp 1366331 138364841879232 "GET /static/drf-yasg/style.css HTTP/1.1" 304 0
+INFO 2025-08-05 08:13:45,167 basehttp 1366331 138364850271936 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 304 0
+INFO 2025-08-05 08:13:45,168 basehttp 1366331 138364811630272 "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 304 0
+INFO 2025-08-05 08:13:45,168 basehttp 1366331 138364820022976 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 304 0
+INFO 2025-08-05 08:13:45,176 basehttp 1366331 138364828415680 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 304 0
+INFO 2025-08-05 08:13:45,176 basehttp 1366331 138364803237568 "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 304 0
+INFO 2025-08-05 08:13:45,176 basehttp 1366331 138364850271936 "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 304 0
+INFO 2025-08-05 08:13:45,353 basehttp 1366331 138364841879232 "GET /static/drf-yasg/swagger-ui-dist/favicon-32x32.png HTTP/1.1" 304 0
+INFO 2025-08-05 08:13:45,381 basehttp 1366331 138364850271936 "GET /?format=openapi HTTP/1.1" 200 38329
+WARNING 2025-08-05 11:52:51,437 log 1366331 138364841879232 Bad Request: /api/accounts/login/
+WARNING 2025-08-05 11:52:51,437 basehttp 1366331 138364841879232 "POST /api/accounts/login/ HTTP/1.1" 400 44
+INFO 2025-08-05 11:54:17,377 basehttp 1366331 138364841879232 "POST /api/accounts/login/ HTTP/1.1" 200 1088
+WARNING 2025-08-05 11:58:43,434 log 1366331 138364841879232 Unauthorized: /api/accounts/logout/
+WARNING 2025-08-05 11:58:43,434 basehttp 1366331 138364841879232 "POST /api/accounts/logout/ HTTP/1.1" 401 58
+WARNING 2025-08-05 12:05:39,660 log 1366331 138364841879232 Bad Request: /api/accounts/logout/
+WARNING 2025-08-05 12:05:39,660 basehttp 1366331 138364841879232 "POST /api/accounts/logout/ HTTP/1.1" 400 33
+INFO 2025-08-05 12:10:54,128 autoreload 1366331 138365013659776 /home/hader/skillswap-backend/skillswap/settings.py changed, reloading.
+INFO 2025-08-05 12:10:54,986 autoreload 1677733 127774862303360 Watching for file changes with StatReloader
+INFO 2025-08-05 12:11:38,645 basehttp 1677733 127774766397120 "POST /api/accounts/logout/ HTTP/1.1" 200 37
+WARNING 2025-08-05 12:11:47,606 log 1677733 127774766397120 Bad Request: /api/accounts/logout/
+WARNING 2025-08-05 12:11:47,607 basehttp 1677733 127774766397120 "POST /api/accounts/logout/ HTTP/1.1" 400 33
+INFO 2025-08-05 12:12:08,539 autoreload 1679072 130062564348032 Watching for file changes with StatReloader
+INFO 2025-08-05 12:12:13,539 basehttp 1679072 130062467724992 "GET / HTTP/1.1" 200 1553
+INFO 2025-08-05 12:12:13,579 basehttp 1679072 130062467724992 "GET /static/drf-yasg/style.css HTTP/1.1" 304 0
+INFO 2025-08-05 12:12:13,590 basehttp 1679072 130062442546880 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 304 0
+INFO 2025-08-05 12:12:13,591 basehttp 1679072 130062450939584 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 304 0
+INFO 2025-08-05 12:12:13,593 basehttp 1679072 130062434154176 "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 304 0
+INFO 2025-08-05 12:12:13,593 basehttp 1679072 130062459332288 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 304 0
+INFO 2025-08-05 12:12:13,594 basehttp 1679072 130062425761472 "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 304 0
+INFO 2025-08-05 12:12:13,595 basehttp 1679072 130062442546880 "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 304 0
+INFO 2025-08-05 12:12:13,975 basehttp 1679072 130062442546880 "GET /?format=openapi HTTP/1.1" 200 38329
+WARNING 2025-08-05 12:12:31,273 log 1679072 130062442546880 Bad Request: /api/accounts/logout/
+WARNING 2025-08-05 12:12:31,273 basehttp 1679072 130062442546880 "POST /api/accounts/logout/ HTTP/1.1" 400 33
+INFO 2025-08-05 12:13:11,693 basehttp 1679072 130062442546880 "POST /api/accounts/login/ HTTP/1.1" 200 1088
+INFO 2025-08-05 12:13:37,021 basehttp 1679072 130062442546880 "POST /api/accounts/logout/ HTTP/1.1" 200 37
+WARNING 2025-08-05 12:14:59,130 log 1679072 130062442546880 Unauthorized: /api/accounts/refresh/
+WARNING 2025-08-05 12:14:59,130 basehttp 1679072 130062442546880 "POST /api/accounts/refresh/ HTTP/1.1" 401 33
+INFO 2025-08-05 12:15:15,867 basehttp 1679072 130062442546880 "POST /api/accounts/login/ HTTP/1.1" 200 1088
+INFO 2025-08-05 12:15:46,130 basehttp 1679072 130062442546880 "POST /api/accounts/refresh/ HTTP/1.1" 200 244
+INFO 2025-08-05 12:17:11,852 basehttp 1679072 130062442546880 "POST /api/accounts/register/ HTTP/1.1" 201 993
+INFO 2025-08-05 12:18:48,900 basehttp 1679072 130062442546880 "GET /api/accounts/profile/ HTTP/1.1" 200 580
+INFO 2025-08-05 12:19:11,684 basehttp 1679072 130062442546880 "GET /api/accounts/skills/ HTTP/1.1" 200 2
+INFO 2025-08-05 12:19:49,015 basehttp 1679072 130062442546880 "POST /api/accounts/skills/ HTTP/1.1" 201 136
+INFO 2025-08-05 12:21:14,866 basehttp 1679072 130062442546880 "GET /api/accounts/skills/ HTTP/1.1" 200 138
+INFO 2025-08-05 12:21:33,032 basehttp 1679072 130062442546880 "GET /api/accounts/skills/34/ HTTP/1.1" 200 136
+INFO 2025-08-05 12:22:13,318 basehttp 1679072 130062442546880 "POST /api/accounts/skills/ HTTP/1.1" 201 133
+INFO 2025-08-05 12:22:34,233 basehttp 1679072 130062442546880 "GET /api/chat/rooms/ HTTP/1.1" 200 2
+WARNING 2025-08-05 12:23:01,246 log 1679072 130062442546880 Not Found: /api/chat/rooms/34/send/
+WARNING 2025-08-05 12:23:01,247 basehttp 1679072 130062442546880 "POST /api/chat/rooms/34/send/ HTTP/1.1" 404 31
+WARNING 2025-08-05 12:25:23,269 log 1679072 130062442546880 Not Found: /api/chat/rooms/2/send/
+WARNING 2025-08-05 12:25:23,269 basehttp 1679072 130062442546880 "POST /api/chat/rooms/2/send/ HTTP/1.1" 404 31
+INFO 2025-08-05 12:32:43,955 autoreload 1700359 139001142620288 Watching for file changes with StatReloader
+INFO 2025-08-05 12:32:48,817 basehttp 1700359 139000978339520 "GET / HTTP/1.1" 200 1553
+INFO 2025-08-05 12:32:49,236 basehttp 1700359 139000978339520 "GET /?format=openapi HTTP/1.1" 200 38329
+INFO 2025-08-05 12:32:55,326 basehttp 1700359 139000978339520 "GET / HTTP/1.1" 200 1553
+INFO 2025-08-05 12:32:55,366 basehttp 1700359 139000978339520 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 304 0
+INFO 2025-08-05 12:32:55,369 basehttp 1700359 139000959456960 "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 304 0
+INFO 2025-08-05 12:32:55,371 basehttp 1700359 139000969946816 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 304 0
+INFO 2025-08-05 12:32:55,373 basehttp 1700359 139000951064256 "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 304 0
+INFO 2025-08-05 12:32:55,374 basehttp 1700359 139000942671552 "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 304 0
+INFO 2025-08-05 12:32:55,688 basehttp 1700359 139000942671552 "GET /static/drf-yasg/swagger-ui-dist/favicon-32x32.png HTTP/1.1" 304 0
+INFO 2025-08-05 12:32:55,736 basehttp 1700359 139000978339520 "GET /?format=openapi HTTP/1.1" 200 38329
+INFO 2025-08-05 12:34:02,058 basehttp 1700359 139000978339520 "POST /api/accounts/login/ HTTP/1.1" 200 1358
+INFO 2025-08-05 12:35:13,149 basehttp 1700359 139000978339520 "POST /api/accounts/logout/ HTTP/1.1" 200 37
+INFO 2025-08-05 12:35:22,233 basehttp 1700359 139000978339520 "POST /api/accounts/login/ HTTP/1.1" 200 1358
+INFO 2025-08-05 12:35:48,465 basehttp 1700359 139000978339520 "POST /api/accounts/refresh/ HTTP/1.1" 200 244
+INFO 2025-08-05 12:36:03,731 basehttp 1700359 139000978339520 "GET /api/accounts/profile/ HTTP/1.1" 200 850
+INFO 2025-08-05 12:37:31,868 basehttp 1700359 139000978339520 "PATCH /api/accounts/profile/ HTTP/1.1" 200 790
+INFO 2025-08-05 12:37:48,407 basehttp 1700359 139000978339520 "GET /api/accounts/skills/ HTTP/1.1" 200 272
+INFO 2025-08-05 12:38:03,431 basehttp 1700359 139000978339520 "GET /api/chat/rooms/ HTTP/1.1" 200 2
+WARNING 2025-08-05 12:38:40,824 log 1700359 139000978339520 Not Found: /api/chat/rooms/2/send/
+WARNING 2025-08-05 12:38:40,825 basehttp 1700359 139000978339520 "POST /api/chat/rooms/2/send/ HTTP/1.1" 404 31
+WARNING 2025-08-05 12:38:47,430 log 1700359 139000978339520 Not Found: /api/chat/rooms/1/send/
+WARNING 2025-08-05 12:38:47,430 basehttp 1700359 139000978339520 "POST /api/chat/rooms/1/send/ HTTP/1.1" 404 31
+WARNING 2025-08-05 12:38:54,109 log 1700359 139000978339520 Not Found: /api/chat/rooms/34/send/
+WARNING 2025-08-05 12:38:54,109 basehttp 1700359 139000978339520 "POST /api/chat/rooms/34/send/ HTTP/1.1" 404 31
+INFO 2025-08-05 12:39:12,037 basehttp 1700359 139000978339520 "GET /api/chat/rooms/ HTTP/1.1" 200 2
+WARNING 2025-08-05 12:40:11,235 log 1700359 139000978339520 Not Found: /api/chat/rooms/34/send/
+WARNING 2025-08-05 12:40:11,235 basehttp 1700359 139000978339520 "POST /api/chat/rooms/34/send/ HTTP/1.1" 404 31
+INFO 2025-08-05 12:40:30,567 basehttp 1700359 139000978339520 "GET /api/notifications/ HTTP/1.1" 200 2
+INFO 2025-08-05 12:40:41,308 basehttp 1700359 139000978339520 "POST /api/notifications/read-all/ HTTP/1.1" 200 20
+WARNING 2025-08-05 12:41:13,863 log 1700359 139000978339520 Not Found: /api/notifications/1/read/
+WARNING 2025-08-05 12:41:13,864 basehttp 1700359 139000978339520 "POST /api/notifications/1/read/ HTTP/1.1" 404 34
+WARNING 2025-08-05 12:41:20,738 log 1700359 139000978339520 Not Found: /api/notifications/34/read/
+WARNING 2025-08-05 12:41:20,738 basehttp 1700359 139000978339520 "POST /api/notifications/34/read/ HTTP/1.1" 404 34
+INFO 2025-08-05 12:41:29,700 basehttp 1700359 139000978339520 "GET /api/payments/history/ HTTP/1.1" 200 2
+INFO 2025-08-05 12:41:49,472 basehttp 1700359 139000978339520 "POST /api/payments/paymob/ HTTP/1.1" 200 57
+INFO 2025-08-05 12:49:06,288 autoreload 1700359 139001142620288 /home/hader/skillswap-backend/payments/views.py changed, reloading.
+INFO 2025-08-05 12:49:07,081 autoreload 1717286 128565473087616 Watching for file changes with StatReloader
+INFO 2025-08-05 12:52:03,419 autoreload 1717286 128565473087616 /home/hader/skillswap-backend/skillswap/settings.py changed, reloading.
+INFO 2025-08-05 12:53:01,168 autoreload 1721215 133182586278016 Watching for file changes with StatReloader
+INFO 2025-08-05 12:53:04,861 basehttp 1721215 133182489884352 "GET / HTTP/1.1" 200 1553
+INFO 2025-08-05 12:53:05,272 basehttp 1721215 133182489884352 "GET /?format=openapi HTTP/1.1" 200 38409
+WARNING 2025-08-05 12:53:16,919 log 1721215 133182489884352 Unauthorized: /api/payments/history/
+WARNING 2025-08-05 12:53:16,919 basehttp 1721215 133182489884352 "GET /api/payments/history/ HTTP/1.1" 401 58
+INFO 2025-08-05 12:54:28,419 basehttp 1721215 133182489884352 "POST /api/accounts/login/ HTTP/1.1" 200 1298
+WARNING 2025-08-05 12:54:55,648 log 1721215 133182489884352 Unauthorized: /api/payments/history/
+WARNING 2025-08-05 12:54:55,648 basehttp 1721215 133182489884352 "GET /api/payments/history/ HTTP/1.1" 401 58
+WARNING 2025-08-05 12:54:59,095 log 1721215 133182489884352 Unauthorized: /api/payments/history/
+WARNING 2025-08-05 12:54:59,096 basehttp 1721215 133182489884352 "GET /api/payments/history/ HTTP/1.1" 401 58
+INFO 2025-08-05 12:55:20,800 basehttp 1721215 133182489884352 "GET /api/payments/history/ HTTP/1.1" 200 2
+ERROR 2025-08-05 12:55:35,794 log 1721215 133182489884352 Internal Server Error: /api/payments/paymob/
+Traceback (most recent call last):
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/payments/views.py", line 110, in post
+    payment = Payment.objects.create(
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/django/db/models/query.py", line 656, in create
+    obj = self.model(**kwargs)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/django/db/models/base.py", line 567, in __init__
+    raise TypeError(
+TypeError: Payment() got unexpected keyword arguments: 'provider', 'provider_payment_id'
+ERROR 2025-08-05 12:55:35,795 basehttp 1721215 133182489884352 "POST /api/payments/paymob/ HTTP/1.1" 500 25466
+INFO 2025-08-05 12:56:37,135 basehttp 1721215 133182489884352 "POST /api/accounts/login/ HTTP/1.1" 200 1298
+ERROR 2025-08-05 12:57:22,511 log 1721215 133182489884352 Internal Server Error: /api/payments/paymob/
+Traceback (most recent call last):
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/payments/views.py", line 110, in post
+    payment = Payment.objects.create(
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/django/db/models/query.py", line 656, in create
+    obj = self.model(**kwargs)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/django/db/models/base.py", line 567, in __init__
+    raise TypeError(
+TypeError: Payment() got unexpected keyword arguments: 'provider', 'provider_payment_id'
+ERROR 2025-08-05 12:57:22,512 basehttp 1721215 133182489884352 "POST /api/payments/paymob/ HTTP/1.1" 500 25467
+ERROR 2025-08-05 12:57:38,408 log 1721215 133182489884352 Internal Server Error: /api/payments/paymob/
+Traceback (most recent call last):
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/payments/views.py", line 110, in post
+    payment = Payment.objects.create(
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/django/db/models/query.py", line 656, in create
+    obj = self.model(**kwargs)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/django/db/models/base.py", line 567, in __init__
+    raise TypeError(
+TypeError: Payment() got unexpected keyword arguments: 'provider', 'provider_payment_id'
+ERROR 2025-08-05 12:57:38,408 basehttp 1721215 133182489884352 "POST /api/payments/paymob/ HTTP/1.1" 500 25466
+INFO 2025-08-05 12:57:54,276 basehttp 1721215 133182489884352 "POST /api/payments/paypal/ HTTP/1.1" 200 57
+INFO 2025-08-05 12:59:51,282 basehttp 1721215 133182489884352 "POST /api/payments/stripe/ HTTP/1.1" 200 57
+ERROR 2025-08-05 13:00:10,508 log 1721215 133182489884352 Internal Server Error: /api/payments/paymob/
+Traceback (most recent call last):
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/payments/views.py", line 110, in post
+    payment = Payment.objects.create(
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/django/db/models/query.py", line 656, in create
+    obj = self.model(**kwargs)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/django/db/models/base.py", line 567, in __init__
+    raise TypeError(
+TypeError: Payment() got unexpected keyword arguments: 'provider', 'provider_payment_id'
+ERROR 2025-08-05 13:00:10,509 basehttp 1721215 133182489884352 "POST /api/payments/paymob/ HTTP/1.1" 500 25466
+INFO 2025-08-05 13:00:35,733 basehttp 1721215 133182489884352 "GET /api/points/orders/ HTTP/1.1" 200 2
+INFO 2025-08-05 13:00:54,147 basehttp 1721215 133182489884352 "POST /api/points/orders/ HTTP/1.1" 201 4865
+INFO 2025-08-05 13:01:48,960 basehttp 1721215 133182489884352 "GET /api/points/orders/ HTTP/1.1" 200 4867
+WARNING 2025-08-05 13:02:03,824 log 1721215 133182489884352 Not Found: /api/points/orders/2/
+WARNING 2025-08-05 13:02:03,824 basehttp 1721215 133182489884352 "GET /api/points/orders/2/ HTTP/1.1" 404 27
+INFO 2025-08-05 13:02:23,347 basehttp 1721215 133182489884352 "GET /api/points/orders/351/ HTTP/1.1" 200 4865
+WARNING 2025-08-05 13:02:45,146 log 1721215 133182489884352 Not Found: /api/points/orders/351/accept/
+WARNING 2025-08-05 13:02:45,147 basehttp 1721215 133182489884352 "POST /api/points/orders/351/accept/ HTTP/1.1" 404 27
+WARNING 2025-08-05 13:04:07,498 log 1721215 133182489884352 Not Found: /api/points/orders/4/accept/
+WARNING 2025-08-05 13:04:07,498 basehttp 1721215 133182489884352 "POST /api/points/orders/4/accept/ HTTP/1.1" 404 27
+WARNING 2025-08-05 13:04:17,851 log 1721215 133182489884352 Not Found: /api/points/orders/4/cancel/
+WARNING 2025-08-05 13:04:17,851 basehttp 1721215 133182489884352 "POST /api/points/orders/4/cancel/ HTTP/1.1" 404 27
+WARNING 2025-08-05 13:04:32,634 log 1721215 133182489884352 Not Found: /api/points/orders/351/complete/
+WARNING 2025-08-05 13:04:32,635 basehttp 1721215 133182489884352 "POST /api/points/orders/351/complete/ HTTP/1.1" 404 27
+ERROR 2025-08-05 13:04:42,932 log 1721215 133182489884352 Internal Server Error: /api/points/packages/
+Traceback (most recent call last):
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/points/views.py", line 28, in get
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/rest_framework/serializers.py", line 797, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/rest_framework/serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/rest_framework/serializers.py", line 716, in to_representation
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/rest_framework/serializers.py", line 527, in to_representation
+    attribute = field.get_attribute(instance)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/rest_framework/fields.py", line 437, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/rest_framework/fields.py", line 104, in get_attribute
+    instance = getattr(instance, attr)
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/points/models.py", line 29, in discounted_price
+    return self.price * (1 - self.discount_percentage / 100)
+           ~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+ERROR 2025-08-05 13:04:42,933 basehttp 1721215 133182489884352 "GET /api/points/packages/ HTTP/1.1" 500 26329
+INFO 2025-08-05 13:15:42,279 autoreload 1721215 133182586278016 /home/hader/skillswap-backend/points/views.py changed, reloading.
+INFO 2025-08-05 13:15:42,704 autoreload 1744288 139235313377408 Watching for file changes with StatReloader
+ERROR 2025-08-05 13:15:57,091 log 1744288 139235216586432 Internal Server Error: /api/points/packages/
+Traceback (most recent call last):
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/points/views.py", line 27, in get
+    return Response(serializer.data, status=status.HTTP_200_OK)
+                    ^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/rest_framework/serializers.py", line 797, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/rest_framework/serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/rest_framework/serializers.py", line 716, in to_representation
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/rest_framework/serializers.py", line 527, in to_representation
+    attribute = field.get_attribute(instance)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/rest_framework/fields.py", line 437, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/rest_framework/fields.py", line 104, in get_attribute
+    instance = getattr(instance, attr)
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/points/models.py", line 29, in discounted_price
+    return self.price * (1 - self.discount_percentage / 100)
+           ~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+ERROR 2025-08-05 13:15:57,092 basehttp 1744288 139235216586432 "GET /api/points/packages/ HTTP/1.1" 500 26356
+INFO 2025-08-05 13:16:12,928 basehttp 1744288 139235216586432 "GET /api/points/transactions/ HTTP/1.1" 200 2
+ERROR 2025-08-05 13:16:20,457 log 1744288 139235216586432 Internal Server Error: /api/points/packages/
+Traceback (most recent call last):
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/points/views.py", line 27, in get
+    return Response(serializer.data, status=status.HTTP_200_OK)
+                    ^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/rest_framework/serializers.py", line 797, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/rest_framework/serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/rest_framework/serializers.py", line 716, in to_representation
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/rest_framework/serializers.py", line 527, in to_representation
+    attribute = field.get_attribute(instance)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/rest_framework/fields.py", line 437, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/env/lib/python3.12/site-packages/rest_framework/fields.py", line 104, in get_attribute
+    instance = getattr(instance, attr)
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hader/skillswap-backend/points/models.py", line 29, in discounted_price
+    return self.price * (1 - self.discount_percentage / 100)
+           ~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+ERROR 2025-08-05 13:16:20,457 basehttp 1744288 139235216586432 "GET /api/points/packages/ HTTP/1.1" 500 26356
+INFO 2025-08-05 13:25:32,900 autoreload 1744288 139235313377408 /home/hader/skillswap-backend/points/models.py changed, reloading.
+INFO 2025-08-05 13:25:33,310 autoreload 1754210 139892550459520 Watching for file changes with StatReloader
+INFO 2025-08-05 13:27:25,380 autoreload 1754210 139892550459520 /home/hader/skillswap-backend/points/models.py changed, reloading.
+INFO 2025-08-05 13:27:25,752 autoreload 1756024 134804812308608 Watching for file changes with StatReloader
+INFO 2025-08-05 13:36:08,820 autoreload 1756024 134804812308608 /home/hader/skillswap-backend/points/models.py changed, reloading.
+INFO 2025-08-05 13:36:09,188 autoreload 1764758 136097870397568 Watching for file changes with StatReloader
+INFO 2025-08-05 13:36:18,485 basehttp 1764758 136097707325120 "GET /api/points/packages/ HTTP/1.1" 200 1448
+INFO 2025-08-05 13:36:39,103 basehttp 1764758 136097707325120 "GET /api/points/transactions/ HTTP/1.1" 200 2
+INFO 2025-08-05 13:36:48,221 basehttp 1764758 136097707325120 "GET /api/reviews/ HTTP/1.1" 200 2326
+INFO 2025-08-05 13:38:01,650 basehttp 1764758 136097707325120 "GET /api/reviews/skills/5/ HTTP/1.1" 200 38673
+WARNING 2025-08-05 13:39:45,961 log 1764758 136097707325120 Not Found: /api/reviews/5/
+WARNING 2025-08-05 13:39:45,961 basehttp 1764758 136097707325120 "GET /api/reviews/5/ HTTP/1.1" 404 28
+INFO 2025-08-05 13:42:33,775 basehttp 1764758 136097707325120 "GET /api/skills/categories/ HTTP/1.1" 200 9013
+INFO 2025-08-05 13:43:14,807 basehttp 1764758 136097707325120 "GET /api/skills/categories/7/ HTTP/1.1" 200 253
+INFO 2025-08-05 13:43:44,806 basehttp 1764758 136097707325120 "GET /api/skills/7/ HTTP/1.1" 200 3668
+WARNING 2025-08-05 13:44:06,669 log 1764758 136097707325120 Forbidden: /api/skills/7/
+WARNING 2025-08-05 13:44:06,669 basehttp 1764758 136097707325120 "PUT /api/skills/7/ HTTP/1.1" 403 47
+INFO 2025-08-05 13:46:26,894 basehttp 1764758 136097707325120 "GET /api/reviews/skills/5/ HTTP/1.1" 200 38673
+WARNING 2025-08-05 13:47:11,448 log 1764758 136097707325120 Not Found: /api/points/orders/351/accept/
+WARNING 2025-08-05 13:47:11,448 basehttp 1764758 136097707325120 "POST /api/points/orders/351/accept/ HTTP/1.1" 404 27
+INFO 2025-08-05 13:53:04,518 basehttp 1764758 136097707325120 "GET /swagger/ HTTP/1.1" 200 1553
+INFO 2025-08-05 13:53:04,564 basehttp 1764758 136097669732032 "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 200 2093
+INFO 2025-08-05 13:53:04,564 basehttp 1764758 136097707325120 "GET /static/drf-yasg/style.css HTTP/1.1" 200 1047
+INFO 2025-08-05 13:53:04,566 basehttp 1764758 136097661339328 "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 200 56904
+INFO 2025-08-05 13:53:04,567 basehttp 1764758 136097695958720 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 200 145206
+INFO 2025-08-05 13:53:04,567 basehttp 1764758 136097669732032 "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 200 14964
+INFO 2025-08-05 13:53:04,569 basehttp 1764758 136097678124736 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 200 322863
+INFO 2025-08-05 13:53:04,572 basehttp 1764758 136097686517440 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 200 1046583
+INFO 2025-08-05 13:53:04,739 basehttp 1764758 136097695958720 "GET /swagger/?format=openapi HTTP/1.1" 200 38409
+INFO 2025-08-05 13:53:04,739 basehttp 1764758 136097669732032 "GET /static/drf-yasg/swagger-ui-dist/favicon-32x32.png HTTP/1.1" 200 628
+WARNING 2025-08-05 14:30:40,546 log 1764758 136097669732032 Unauthorized: /api/accounts/login/
+WARNING 2025-08-05 14:30:40,547 basehttp 1764758 136097669732032 "POST /api/accounts/login/ HTTP/1.1" 401 172
+INFO 2025-08-05 14:31:25,160 basehttp 1764758 136097669732032 "POST /api/accounts/login/ HTTP/1.1" 200 1298
+WARNING 2025-08-05 14:31:47,803 log 1764758 136097669732032 Unauthorized: /api/accounts/logout/
+WARNING 2025-08-05 14:31:47,803 basehttp 1764758 136097669732032 "POST /api/accounts/logout/ HTTP/1.1" 401 58
+WARNING 2025-08-05 14:31:55,038 log 1764758 136097669732032 Unauthorized: /api/accounts/logout/
+WARNING 2025-08-05 14:31:55,039 basehttp 1764758 136097669732032 "POST /api/accounts/logout/ HTTP/1.1" 401 58
+INFO 2025-08-05 14:32:22,591 basehttp 1764758 136097669732032 "POST /api/accounts/login/ HTTP/1.1" 200 1298
+WARNING 2025-08-05 14:32:48,470 log 1764758 136097669732032 Unauthorized: /api/accounts/logout/
+WARNING 2025-08-05 14:32:48,470 basehttp 1764758 136097669732032 "POST /api/accounts/logout/ HTTP/1.1" 401 58
+WARNING 2025-08-05 14:32:52,168 log 1764758 136097669732032 Unauthorized: /api/accounts/logout/
+WARNING 2025-08-05 14:32:52,168 basehttp 1764758 136097669732032 "POST /api/accounts/logout/ HTTP/1.1" 401 58
+WARNING 2025-08-05 14:32:53,060 log 1764758 136097669732032 Unauthorized: /api/accounts/logout/
+WARNING 2025-08-05 14:32:53,061 basehttp 1764758 136097669732032 "POST /api/accounts/logout/ HTTP/1.1" 401 58
+INFO 2025-08-05 14:36:21,418 basehttp 1764758 136097669732032 "POST /api/accounts/login/ HTTP/1.1" 200 1298
+WARNING 2025-08-05 14:36:52,879 log 1764758 136097669732032 Unauthorized: /api/accounts/logout/
+WARNING 2025-08-05 14:36:52,879 basehttp 1764758 136097669732032 "POST /api/accounts/logout/ HTTP/1.1" 401 58
+INFO 2025-08-05 14:37:09,083 basehttp 1764758 136097669732032 "POST /api/accounts/refresh/ HTTP/1.1" 200 244
+WARNING 2025-08-05 14:41:22,560 log 1764758 136097669732032 Unauthorized: /api/accounts/profile/
+WARNING 2025-08-05 14:41:22,560 basehttp 1764758 136097669732032 "GET /api/accounts/profile/ HTTP/1.1" 401 58
+WARNING 2025-08-05 14:41:40,432 log 1764758 136097669732032 Unauthorized: /api/accounts/profile/
+WARNING 2025-08-05 14:41:40,432 basehttp 1764758 136097669732032 "PUT /api/accounts/profile/ HTTP/1.1" 401 58
+WARNING 2025-08-05 14:41:51,439 log 1764758 136097669732032 Unauthorized: /api/accounts/skills/
+WARNING 2025-08-05 14:41:51,440 basehttp 1764758 136097669732032 "GET /api/accounts/skills/ HTTP/1.1" 401 58
+WARNING 2025-08-05 14:42:16,799 log 1764758 136097669732032 Unauthorized: /api/accounts/skills/
+WARNING 2025-08-05 14:42:16,799 basehttp 1764758 136097669732032 "POST /api/accounts/skills/ HTTP/1.1" 401 58
+INFO 2025-08-05 14:42:37,313 basehttp 1764758 136097669732032 "GET /api/skills/categories/ HTTP/1.1" 200 9013
+INFO 2025-08-05 14:45:23,201 basehttp 1764758 136097669732032 "GET /api/skills/categories/7/ HTTP/1.1" 200 253
+WARNING 2025-08-05 14:58:05,854 log 1764758 136097669732032 Unauthorized: /api/skills/7/
+WARNING 2025-08-05 14:58:05,854 basehttp 1764758 136097669732032 "PUT /api/skills/7/ HTTP/1.1" 401 58
+INFO 2025-08-05 14:58:24,779 basehttp 1764758 136097669732032 "GET /api/reviews/skills/5/ HTTP/1.1" 200 38673
+WARNING 2025-08-05 15:04:32,891 log 1764758 136097669732032 Unauthorized: /api/accounts/skills/7/
+WARNING 2025-08-05 15:04:32,891 basehttp 1764758 136097669732032 "GET /api/accounts/skills/7/ HTTP/1.1" 401 58
+WARNING 2025-08-05 15:04:41,084 log 1764758 136097669732032 Unauthorized: /api/accounts/skills/5/
+WARNING 2025-08-05 15:04:41,084 basehttp 1764758 136097669732032 "GET /api/accounts/skills/5/ HTTP/1.1" 401 58
+WARNING 2025-08-05 15:05:00,030 log 1764758 136097669732032 Unauthorized: /api/payments/history/
+WARNING 2025-08-05 15:05:00,031 basehttp 1764758 136097669732032 "GET /api/payments/history/ HTTP/1.1" 401 58
+WARNING 2025-08-05 15:05:09,305 log 1764758 136097669732032 Unauthorized: /api/payments/paymob/
+WARNING 2025-08-05 15:05:09,305 basehttp 1764758 136097669732032 "POST /api/payments/paymob/ HTTP/1.1" 401 58
+WARNING 2025-08-05 15:05:18,508 log 1764758 136097669732032 Unauthorized: /api/payments/paypal/
+WARNING 2025-08-05 15:05:18,508 basehttp 1764758 136097669732032 "POST /api/payments/paypal/ HTTP/1.1" 401 58
+WARNING 2025-08-05 15:05:28,593 log 1764758 136097669732032 Unauthorized: /api/payments/stripe/
+WARNING 2025-08-05 15:05:28,593 basehttp 1764758 136097669732032 "POST /api/payments/stripe/ HTTP/1.1" 401 58
+WARNING 2025-08-05 15:05:36,105 log 1764758 136097669732032 Unauthorized: /api/points/orders/
+WARNING 2025-08-05 15:05:36,106 basehttp 1764758 136097669732032 "GET /api/points/orders/ HTTP/1.1" 401 58
+WARNING 2025-08-05 15:05:45,818 log 1764758 136097669732032 Unauthorized: /api/points/orders/
+WARNING 2025-08-05 15:05:45,818 basehttp 1764758 136097669732032 "POST /api/points/orders/ HTTP/1.1" 401 58
+WARNING 2025-08-05 15:06:17,866 log 1764758 136097669732032 Unauthorized: /api/points/orders/351/
+WARNING 2025-08-05 15:06:17,866 basehttp 1764758 136097669732032 "GET /api/points/orders/351/ HTTP/1.1" 401 58
+WARNING 2025-08-05 15:06:29,727 log 1764758 136097669732032 Unauthorized: /api/points/orders/351/accept/
+WARNING 2025-08-05 15:06:29,727 basehttp 1764758 136097669732032 "POST /api/points/orders/351/accept/ HTTP/1.1" 401 58
+WARNING 2025-08-06 08:36:08,527 log 1764758 136097669732032 Unauthorized: /api/points/orders/
+WARNING 2025-08-06 08:36:08,527 basehttp 1764758 136097669732032 "POST /api/points/orders/ HTTP/1.1" 401 58
+INFO 2025-08-06 08:36:21,826 basehttp 1764758 136097669732032 "POST /api/accounts/login/ HTTP/1.1" 200 1298
+WARNING 2025-08-06 08:36:50,606 log 1764758 136097669732032 Unauthorized: /api/accounts/logout/
+WARNING 2025-08-06 08:36:50,607 basehttp 1764758 136097669732032 "POST /api/accounts/logout/ HTTP/1.1" 401 58
+WARNING 2025-08-06 08:37:31,049 log 1764758 136097669732032 Unauthorized: /api/accounts/logout/
+WARNING 2025-08-06 08:37:31,049 basehttp 1764758 136097669732032 "POST /api/accounts/logout/ HTTP/1.1" 401 58
+INFO 2025-08-06 08:37:39,978 basehttp 1764758 136097669732032 "POST /api/accounts/login/ HTTP/1.1" 200 1298
+WARNING 2025-08-06 08:38:45,619 log 1764758 136097669732032 Unauthorized: /api/accounts/logout/
+WARNING 2025-08-06 08:38:45,619 basehttp 1764758 136097669732032 "POST /api/accounts/logout/ HTTP/1.1" 401 58
+INFO 2025-08-06 08:40:35,551 basehttp 1764758 136097669732032 "POST /api/accounts/logout/ HTTP/1.1" 200 37
+INFO 2025-08-06 08:40:50,779 basehttp 1764758 136097669732032 "POST /api/accounts/login/ HTTP/1.1" 200 1298
+INFO 2025-08-06 08:41:55,545 basehttp 1764758 136097669732032 "POST /api/accounts/refresh/ HTTP/1.1" 200 244
+INFO 2025-08-06 08:44:29,389 basehttp 1764758 136097669732032 "POST /api/points/orders/ HTTP/1.1" 201 4865
+INFO 2025-08-06 08:53:28,182 basehttp 1764758 136097669732032 "GET /api/points/orders/351/ HTTP/1.1" 200 4865
+INFO 2025-08-06 09:10:18,370 basehttp 1764758 136097669732032 "POST /api/payments/paypal/ HTTP/1.1" 200 57
+INFO 2025-08-06 09:13:06,685 basehttp 1764758 136097669732032 "POST /api/notifications/read-all/ HTTP/1.1" 200 20

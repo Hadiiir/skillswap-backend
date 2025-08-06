@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillSwap Backend - معاينة المشروع</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+        
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .demo-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .demo-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .demo-card h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .demo-card .icon {
+            font-size: 2rem;
+        }
+        
+        .feature-list {
+            list-style: none;
+            margin: 15px 0;
+        }
+        
+        .feature-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .check {
+            color: #4CAF50;
+            font-weight: bold;
+        }
+        
+        .api-endpoint {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .method {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            color: white;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        
+        .get { background: #28a745; }
+        .post { background: #007bff; }
+        .put { background: #ffc107; color: #333; }
+        .delete { background: #dc3545; }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .stat-card {
+            background: rgba(255,255,255,0.1);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            display: block;
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        
+        .tech-tag {
+            background: #667eea;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        
+        .cta-section {
+            text-align: center;
+            margin-top: 50px;
+            color: white;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #ff6b6b;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            margin: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            background: #ff5252;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 SkillSwap Backend</h1>
+            <p>منصة تبادل المهارات - نظام Backend متكامل</p>
+        </div>
+        
+        <div class="stats-grid">
+            <div class="stat-card">
+                <span class="stat-number">25+</span>
+                <span>API Endpoints</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">8</span>
+                <span>Django Apps</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">15+</span>
+                <span>Database Models</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">100%</span>
+                <span>RESTful API</span>
+            </div>
+        </div>
+        
+        <div class="demo-grid">
+            <div class="demo-card">
+                <h3><span class="icon">👥</span>إدارة المستخدمين</h3>
+                <ul class="feature-list">
+                    <li><span class="check">✓</span> تسجيل وتسجيل دخول المستخدمين</li>
+                    <li><span class="check">✓</span> نظام JWT للمصادقة</li>
+                    <li><span class="check">✓</span> ملفات شخصية مفصلة</li>
+                    <li><span class="check">✓</span> نظام التقييمات والمراجعات</li>
+                    <li><span class="check">✓</span> إدارة المهارات الشخصية</li>
+                </ul>
+                
+                <div class="api-endpoint">
+                    <span class="method post">POST</span> /api/auth/register/
+                </div>
+                <div class="api-endpoint">
+                    <span class="method post">POST</span> /api/auth/login/
+                </div>
+                <div class="api-endpoint">
+                    <span class="method get">GET</span> /api/auth/profile/
+                </div>
+            </div>
+            
+            <div class="demo-card">
+                <h3><span class="icon">🎯</span>سوق المهارات</h3>
+                <ul class="feature-list">
+                    <li><span class="check">✓</span> عرض وإدارة المهارات</li>
+                    <li><span class="check">✓</span> تصنيفات متعددة</li>
+                    <li><span class="check">✓</span> بحث وفلترة متقدمة</li>
+                    <li><span class="check">✓</span> نظام التسعير بالنقاط</li>
+                    <li><span class="check">✓</span> صور ووسائط متعددة</li>
+                </ul>
+                
+                <div class="api-endpoint">
+                    <span class="method get">GET</span> /api/skills/
+                </div>
+                <div class="api-endpoint">
+                    <span class="method post">POST</span> /api/skills/create/
+                </div>
+                <div class="api-endpoint">
+                    <span class="method get">GET</span> /api/skills/categories/
+                </div>
+            </div>
+            
+            <div class="demo-card">
+                <h3><span class="icon">💰</span>نظام النقاط</h3>
+                <ul class="feature-list">
+                    <li><span class="check">✓</span> إدارة رصيد النقاط</li>
+                    <li><span class="check">✓</span> تاريخ المعاملات</li>
+                    <li><span class="check">✓</span> نظام الطلبات</li>
+                    <li><span class="check">✓</span> عمولة المنصة</li>
+                    <li><span class="check">✓</span> تقارير مالية</li>
+                </ul>
+                
+                <div class="api-endpoint">
+                    <span class="method get">GET</span> /api/points/balance/
+                </div>
+                <div class="api-endpoint">
+                    <span class="method post">POST</span> /api/points/transfer/
+                </div>
+                <div class="api-endpoint">
+                    <span class="method get">GET</span> /api/points/transactions/
+                </div>
+            </div>
+            
+            <div class="demo-card">
+                <h3><span class="icon">💬</span>نظام المحادثة</h3>
+                <ul class="feature-list">
+                    <li><span class="check">✓</span> محادثات فورية</li>
+                    <li><span class="check">✓</span> WebSocket للتحديث المباشر</li>
+                    <li><span class="check">✓</span> إرسال الملفات</li>
+                    <li><span class="check">✓</span> تاريخ المحادثات</li>
+                    <li><span class="check">✓</span> إشعارات فورية</li>
+                </ul>
+                
+                <div class="api-endpoint">
+                    <span class="method get">GET</span> /api/chat/conversations/
+                </div>
+                <div class="api-endpoint">
+                    <span class="method post">POST</span> /api/chat/send/
+                </div>
+                <div class="api-endpoint">
+                    <span class="method get">GET</span> /ws/chat/{room_name}/
+                </div>
+            </div>
+            
+            <div class="demo-card">
+                <h3><span class="icon">💳</span>نظام الدفع</h3>
+                <ul class="feature-list">
+                    <li><span class="check">✓</span> تكامل Stripe</li>
+                    <li><span class="check">✓</span> تكامل Paymob</li>
+                    <li><span class="check">✓</span> معالجة آمنة للمدفوعات</li>
+                    <li><span class="check">✓</span> فواتير تلقائية</li>
+                    <li><span class="check">✓</span> تتبع حالة الدفع</li>
+                </ul>
+                
+                <div class="api-endpoint">
+                    <span class="method post">POST</span> /api/payments/create/
+                </div>
+                <div class="api-endpoint">
+                    <span class="method get">GET</span> /api/payments/history/
+                </div>
+                <div class="api-endpoint">
+                    <span class="method post">POST</span> /api/payments/webhook/
+                </div>
+            </div>
+            
+            <div class="demo-card">
+                <h3><span class="icon">⭐</span>نظام المراجعات</h3>
+                <ul class="feature-list">
+                    <li><span class="check">✓</span> تقييمات المهارات</li>
+                    <li><span class="check">✓</span> مراجعات مفصلة</li>
+                    <li><span class="check">✓</span> نظام التقييم بالنجوم</li>
+                    <li><span class="check">✓</span> إحصائيات التقييمات</li>
+                    <li><span class="check">✓</span> فلترة المراجعات</li>
+                </ul>
+                
+                <div class="api-endpoint">
+                    <span class="method post">POST</span> /api/reviews/create/
+                </div>
+                <div class="api-endpoint">
+                    <span class="method get">GET</span> /api/reviews/skill/{id}/
+                </div>
+                <div class="api-endpoint">
+                    <span class="method get">GET</span> /api/reviews/user/{id}/
+                </div>
+            </div>
+        </div>
+        
+        <div class="demo-card">
+            <h3><span class="icon">🛠️</span>التقنيات المستخدمة</h3>
+            <div class="tech-stack">
+                <span class="tech-tag">Django 4.2</span>
+                <span class="tech-tag">Django REST Framework</span>
+                <span class="tech-tag">PostgreSQL</span>
+                <span class="tech-tag">Redis</span>
+                <span class="tech-tag">Celery</span>
+                <span class="tech-tag">WebSocket</span>
+                <span class="tech-tag">JWT Authentication</span>
+                <span class="tech-tag">Docker</span>
+                <span class="tech-tag">Stripe API</span>
+                <span class="tech-tag">Paymob API</span>
+            </div>
+        </div>
+        
+        <div class="cta-section">
+            <h2>🎉 المشروع جاهز للاستخدام!</h2>
+            <p>يمكنك الآن الوصول إلى جميع الميزات والـ APIs</p>
+            <a href="http://localhost:8000/admin/" class="cta-button">🔧 لوحة الإدارة</a>
+            <a href="http://localhost:8000/api/" class="cta-button">📡 API Documentation</a>
+        </div>
+    </div>
+</body>
+</html>
