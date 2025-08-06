@@ -944,3 +944,15 @@ INFO 2025-08-06 08:44:29,389 basehttp 1764758 136097669732032 "POST /api/points/
 INFO 2025-08-06 08:53:28,182 basehttp 1764758 136097669732032 "GET /api/points/orders/351/ HTTP/1.1" 200 4865
 INFO 2025-08-06 09:10:18,370 basehttp 1764758 136097669732032 "POST /api/payments/paypal/ HTTP/1.1" 200 57
 INFO 2025-08-06 09:13:06,685 basehttp 1764758 136097669732032 "POST /api/notifications/read-all/ HTTP/1.1" 200 20
+INFO 2025-08-06 12:24:54,696 autoreload 2154006 139553323593856 Watching for file changes with StatReloader
+INFO 2025-08-06 12:24:58,877 basehttp 2154006 139553227667136 "GET / HTTP/1.1" 200 1553
+INFO 2025-08-06 12:24:58,922 basehttp 2154006 139553227667136 "GET /static/drf-yasg/style.css HTTP/1.1" 304 0
+INFO 2025-08-06 12:24:58,923 basehttp 2154006 139553142728384 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 304 0
+INFO 2025-08-06 12:24:58,928 basehttp 2154006 139553134335680 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 304 0
+INFO 2025-08-06 12:24:58,930 basehttp 2154006 139553142728384 "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 304 0
+INFO 2025-08-06 12:24:58,930 basehttp 2154006 139553151121088 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 304 0
+INFO 2025-08-06 12:24:58,932 basehttp 2154006 139553125942976 "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 304 0
+INFO 2025-08-06 12:24:58,932 basehttp 2154006 139553117550272 "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 304 0
+INFO 2025-08-06 12:24:59,294 basehttp 2154006 139553227667136 "GET /static/drf-yasg/swagger-ui-dist/favicon-32x32.png HTTP/1.1" 304 0
+INFO 2025-08-06 12:24:59,364 basehttp 2154006 139553142728384 "GET /?format=openapi HTTP/1.1" 200 38409
+INFO 2025-08-06 12:25:47,175 basehttp 2154006 139553142728384 "POST /api/accounts/login/ HTTP/1.1" 200 1298
