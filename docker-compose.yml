@@ -1,14 +1,17 @@
+version: '3.8'
+
 services:
-  db:
+  # Development Services
+  db_dev:
     image: postgres:15
-    container_name: skillswap_db
+    container_name: skillswap_db_dev
     environment:
       POSTGRES_DB: skillswap
       POSTGRES_USER: skillswap
       POSTGRES_PASSWORD: skillswap123
       POSTGRES_HOST_AUTH_METHOD: trust
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - postgres_data_dev:/var/lib/postgresql/data
     ports:
       - "5434:5432"
     networks:
@@ -20,13 +23,13 @@ services:
       timeout: 5s
       retries: 5
 
-  redis:
+  redis_dev:
     image: redis:7-alpine
-    container_name: skillswap_redis
+    container_name: skillswap_redis_dev
     ports:
       - "6380:6379"
     volumes:
-      - redis_data:/data
+      - redis_data_dev:/data
     networks:
       - skillswap-network
     restart: unless-stopped
@@ -36,11 +39,11 @@ services:
       timeout: 5s
       retries: 5
 
-  web:
+  web_dev:
     build: .
-    container_name: skillswap_web
+    container_name: skillswap_web_dev
     command: >
-      sh -c "
+      sh -c "./wait-for-it.sh db_dev:5432 -- \
       python manage.py collectstatic --noinput &&
       python manage.py makemigrations &&
       python manage.py migrate &&
@@ -56,22 +59,22 @@ services:
       python manage.py runserver 0.0.0.0:8000
       "
     volumes:
-      - static_volume:/app/staticfiles
-      - media_volume:/app/media
+      - static_volume_dev:/app/staticfiles
+      - media_volume_dev:/app/media
     ports:
       - "8000:8000"
     depends_on:
-      db:
+      db_dev:
         condition: service_healthy
-      redis:
+      redis_dev:
         condition: service_healthy
     environment:
       - DEBUG=True
       - SECRET_KEY=django-insecure-dev-key-change-in-production
-      - DATABASE_URL=postgresql://skillswap:skillswap123@db:5432/skillswap
-      - CELERY_BROKER_URL=redis://redis:6379/0
-      - CELERY_RESULT_BACKEND=redis://redis:6379/0
-      - REDIS_URL=redis://redis:6379/1
+      - DATABASE_URL=postgresql://skillswap:skillswap123@db_dev:5432/skillswap
+      - CELERY_BROKER_URL=redis://redis_dev:6379/0
+      - CELERY_RESULT_BACKEND=redis://redis_dev:6379/0
+      - REDIS_URL=redis://redis_dev:6379/1
       - CORS_ALLOWED_ORIGINS=http://localhost:3000,http://127.0.0.1:3000
     networks:
       - skillswap-network
@@ -82,56 +85,52 @@ services:
       timeout: 10s
       retries: 3
 
-  celery:
+  celery_dev:
     build: .
-    container_name: skillswap_celery
+    container_name: skillswap_celery_dev
     command: celery -A skillswap worker --loglevel=info
     volumes:
-      - static_volume:/app/staticfiles
-      - media_volume:/app/media
+      - static_volume_dev:/app/staticfiles
+      - media_volume_dev:/app/media
     depends_on:
-      - db
-      - redis
+      - db_dev
+      - redis_dev
     environment:
       - DEBUG=True
       - SECRET_KEY=django-insecure-dev-key-change-in-production
-      - DATABASE_URL=postgresql://skillswap:skillswap123@db:5432/skillswap
-      - CELERY_BROKER_URL=redis://redis:6379/0
-      - CELERY_RESULT_BACKEND=redis://redis:6379/0
-      - REDIS_URL=redis://redis:6379/1
+      - DATABASE_URL=postgresql://skillswap:skillswap123@db_dev:5432/skillswap
+      - CELERY_BROKER_URL=redis://redis_dev:6379/0
+      - CELERY_RESULT_BACKEND=redis://redis_dev:6379/0
+      - REDIS_URL=redis://redis_dev:6379/1
     networks:
       - skillswap-network
     restart: unless-stopped
-    healthcheck:
-      test: ["CMD", "celery", "-A", "skillswap", "inspect", "ping"]
-      interval: 30s
-      timeout: 10s
-      retries: 3
 
-  celery-beat:
+
+  celery_beat_dev:
     build: .
-    container_name: skillswap_celery_beat
+    container_name: skillswap_celery_beat_dev
     command: celery -A skillswap beat --loglevel=info
     volumes:
-      - static_volume:/app/staticfiles
-      - media_volume:/app/media
+      - static_volume_dev:/app/staticfiles
+      - media_volume_dev:/app/media
     depends_on:
-      - db
-      - redis
+      - db_dev
+      - redis_dev
     environment:
       - DEBUG=True
       - SECRET_KEY=django-insecure-dev-key-change-in-production
-      - DATABASE_URL=postgresql://skillswap:skillswap123@db:5432/skillswap
-      - CELERY_BROKER_URL=redis://redis:6379/0
-      - CELERY_RESULT_BACKEND=redis://redis:6379/0
-      - REDIS_URL=redis://redis:6379/1
+      - DATABASE_URL=postgresql://skillswap:skillswap123@db_dev:5432/skillswap
+      - CELERY_BROKER_URL=redis://redis_dev:6379/0
+      - CELERY_RESULT_BACKEND=redis://redis_dev:6379/0
+      - REDIS_URL=redis://redis_dev:6379/1
     networks:
       - skillswap-network
     restart: unless-stopped
 
-  flower:
+  flower_dev:
     build: .
-    container_name: skillswap_flower
+    container_name: skillswap_flower_dev
     command: >
       sh -c "
       pip install flower &&
@@ -140,25 +139,151 @@ services:
     ports:
       - "5555:5555"
     depends_on:
-      - redis
-      - celery
+      - redis_dev
+      - celery_dev
     environment:
       - DEBUG=True
       - SECRET_KEY=django-insecure-dev-key-change-in-production
-      - DATABASE_URL=postgresql://skillswap:skillswap123@db:5432/skillswap
-      - CELERY_BROKER_URL=redis://redis:6379/0
-      - CELERY_RESULT_BACKEND=redis://redis:6379/0
-      - REDIS_URL=redis://redis:6379/1
+      - DATABASE_URL=postgresql://skillswap:skillswap123@db_dev:5432/skillswap
+      - CELERY_BROKER_URL=redis://redis_dev:6379/0
+      - CELERY_RESULT_BACKEND=redis://redis_dev:6379/0
+      - REDIS_URL=redis://redis_dev:6379/1
     networks:
       - skillswap-network
     restart: unless-stopped
 
+  # Production Services
+  db_prod:
+    image: postgres:15
+    container_name: skillswap_db_prod
+    environment:
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - postgres_data_prod:/var/lib/postgresql/data
+    networks:
+      - skillswap-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER} -d ${DB_NAME}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis_prod:
+    image: redis:7-alpine
+    container_name: skillswap_redis_prod
+    command: redis-server --requirepass ${REDIS_PASSWORD}
+    networks:
+      - skillswap-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "redis-cli", "--no-auth-warning", "-a", "${REDIS_PASSWORD}", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  web_prod:
+    build: 
+      context: .
+      dockerfile: Dockerfile.production
+    container_name: skillswap_web_prod
+    command: >
+      sh -c "
+        python manage.py collectstatic --noinput &&
+        python manage.py migrate &&
+        gunicorn skillswap.wsgi:application --bind 0.0.0.0:8000 --workers 3 --timeout 120
+      "
+    volumes:
+      - static_volume_prod:/app/staticfiles
+      - media_volume_prod:/app/media
+      - ./logs:/app/logs
+    expose:
+      - "8000"
+    depends_on:
+      db_prod:
+        condition: service_healthy
+      redis_prod:
+        condition: service_healthy
+    networks:
+      - skillswap-network
+    environment:
+      - DJANGO_SETTINGS_MODULE=skillswap.settings_production
+    env_file:
+      - .env.production
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  nginx_prod:
+    image: nginx:alpine
+    container_name: skillswap_nginx_prod
+    volumes:
+      - ./nginx.production.conf:/etc/nginx/conf.d/default.conf
+      - static_volume_prod:/app/staticfiles
+      - media_volume_prod:/app/media
+      - ./ssl:/etc/nginx/ssl
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      - web_prod
+    networks:
+      - skillswap-network
+    restart: unless-stopped
+
+  celery_prod:
+    build: 
+      context: .
+      dockerfile: Dockerfile.production
+    container_name: skillswap_celery_prod
+    command: celery -A skillswap worker --loglevel=info --concurrency=2
+    volumes:
+      - ./logs:/app/logs
+    depends_on:
+      - db_prod
+      - redis_prod
+    networks:
+      - skillswap-network
+    environment:
+      - DJANGO_SETTINGS_MODULE=skillswap.settings_production
+    env_file:
+      - .env.production
+    restart: unless-stopped
+
+  celery_beat_prod:
+    build: 
+      context: .
+      dockerfile: Dockerfile.production
+    container_name: skillswap_celery_beat_prod
+    command: celery -A skillswap beat --loglevel=info
+    volumes:
+      - ./logs:/app/logs
+    depends_on:
+      - db_prod
+      - redis_prod
+    networks:
+      - skillswap-network
+    environment:
+      - DJANGO_SETTINGS_MODULE=skillswap.settings_production
+    env_file:
+      - .env.production
+    restart: unless-stopped
+
+volumes:
+  postgres_data_dev:
+  redis_data_dev:
+  static_volume_dev:
+  media_volume_dev:
+  postgres_data_prod:
+  static_volume_prod:
+  media_volume_prod:
+
 networks:
   skillswap-network:
     driver: bridge
-
-volumes:
-  postgres_data:
-  redis_data:
-  static_volume:
-  media_volume:
+    
