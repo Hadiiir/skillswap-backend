@@ -1,24 +1,47 @@
 #!/bin/bash
 
-echo "🚀 Starting SkillSwap Local Development Server"
-echo "=============================================="
+echo "🚀 Starting Local Environment..."
 
-# Check if database exists
-if [ ! -f "db.sqlite3" ]; then
-    echo "📦 Database not found. Running initial setup..."
-    python scripts/setup_local_dev.py
+# Load local environment
+export $(cat .env.local | xargs)
+
+# Check if virtual environment exists
+if [ ! -d "venv" ]; then
+    echo "Creating virtual environment..."
+    python3 -m venv venv
 fi
 
-echo "🌐 Starting Django development server..."
-echo "   Local server: http://127.0.0.1:8000/"
-echo "   Admin panel: http://127.0.0.1:8000/admin/"
-echo "   Admin credentials:"
-echo "   Email: admin@skillswap.com"
-echo "   Password: admin123"
-echo ""
-echo "Press Ctrl+C to stop the server"
-echo "================================"
+# Activate virtual environment
+source venv/bin/activate
 
-# Set environment variable and run server
-export DJANGO_SETTINGS_MODULE=skillswap.settings_local
+# Install requirements
+echo "Installing requirements..."
+pip install -r requirements.txt
+
+# Run migrations
+echo "Running migrations..."
+python manage.py migrate
+
+# Create superuser if not exists
+echo "Checking for superuser..."
+python manage.py shell -c "
+from django.contrib.auth import get_user_model
+User = get_user_model()
+if not User.objects.filter(username='admin').exists():
+    User.objects.create_superuser('admin', 'admin@skillswap.com', 'admin123')
+    print('Superuser created: admin/admin123')
+else:
+    print('Superuser already exists')
+"
+
+# Collect static files
+echo "Collecting static files..."
+python manage.py collectstatic --noinput
+
+echo "✅ Local environment ready!"
+echo "🌐 Admin: http://localhost:8000/admin"
+echo "📚 API: http://localhost:8000/api"
+echo "📖 Swagger: http://localhost:8000/swagger"
+
+# Start server
 python manage.py runserver 0.0.0.0:8000

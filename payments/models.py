@@ -26,19 +26,16 @@ class Payment(models.Model):
 
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='payments')
-    points_package = models.ForeignKey('points.PointsPackage', on_delete=models.CASCADE)
+    points_package = models.ForeignKey('points.PointsPackage', on_delete=models.CASCADE, null=True, blank=True)
     
-    # Payment details
     amount = models.DecimalField(_('amount'), max_digits=10, decimal_places=2)
     currency = models.CharField(_('currency'), max_length=3, default='EGP')
     payment_method = models.CharField(_('payment method'), max_length=20, choices=PAYMENT_METHODS)
     status = models.CharField(_('status'), max_length=20, choices=STATUS_CHOICES, default='pending')
     
-    # External references
     external_payment_id = models.CharField(_('external payment ID'), max_length=200, blank=True)
     external_reference = models.CharField(_('external reference'), max_length=200, blank=True)
     
-    # Metadata
     metadata = models.JSONField(_('metadata'), default=dict, blank=True)
     failure_reason = models.TextField(_('failure reason'), blank=True)
     
@@ -52,4 +49,4 @@ class Payment(models.Model):
         ordering = ['-created_at']
 
     def __str__(self):
-        return f"Payment {self.id} - {self.user.full_name} - {self.amount} {self.currency}"
+        return f"Payment {self.id} - {self.user} - {self.amount} {self.currency}"

@@ -28,7 +28,7 @@ class Message(models.Model):
 
     chat_room = models.ForeignKey(ChatRoom, on_delete=models.CASCADE, related_name='messages')
     sender = models.ForeignKey(User, on_delete=models.CASCADE, related_name='sent_messages')
-    message_type = models.CharField(_('message type'), max_length=10, choices=MESSAGE_TYPES, default='text')
+    message_type = models.CharField(_('message type'), max_length=80, choices=MESSAGE_TYPES, default='text')
     content = models.TextField(_('content'), blank=True)
     file = models.FileField(_('file'), upload_to='chat/files/', blank=True, null=True)
     is_read = models.BooleanField(_('is read'), default=False)

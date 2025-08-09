@@ -11,7 +11,7 @@ from .serializers import (
 )
 
 # ---------------------------
-# Points Package List API
+# قائمة باكدجات النقاط المتاحة
 # ---------------------------
 class PointsPackageListView(APIView):
     permission_classes = [permissions.AllowAny]
@@ -27,7 +27,7 @@ class PointsPackageListView(APIView):
         return Response(serializer.data, status=status.HTTP_200_OK)
 
 # ---------------------------
-# Points Transaction List API
+# قائمة معاملات النقاط للمستخدم
 # ---------------------------
 class PointsTransactionListView(APIView):
     permission_classes = [permissions.IsAuthenticated]
@@ -38,12 +38,12 @@ class PointsTransactionListView(APIView):
         tags=['Points']
     )
     def get(self, request):
-        transactions = PointsTransaction.objects.filter(user=request.user)
+        transactions = PointsTransaction.objects.filter(user=request.user).order_by('-created_at')
         serializer = PointsTransactionSerializer(transactions, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
 # ---------------------------
-# Order List + Create API
+# قائمة الطلبات + إنشاء طلب جديد
 # ---------------------------
 class OrderListCreateView(APIView):
     permission_classes = [permissions.IsAuthenticated]
@@ -74,7 +74,7 @@ class OrderListCreateView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 # ---------------------------
-# Order Detail API
+# تفاصيل طلب معين
 # ---------------------------
 class OrderDetailView(APIView):
     permission_classes = [permissions.IsAuthenticated]
@@ -96,7 +96,7 @@ class OrderDetailView(APIView):
         return Response(serializer.data, status=status.HTTP_200_OK)
 
 # ---------------------------
-# Accept Order API (Seller Only)
+# قبول الطلب (من قبل البائع فقط)
 # ---------------------------
 class AcceptOrderView(APIView):
     permission_classes = [permissions.IsAuthenticated]
@@ -114,10 +114,10 @@ class AcceptOrderView(APIView):
             order.save()
             return Response({'status': 'Order accepted'}, status=status.HTTP_200_OK)
         except Order.DoesNotExist:
-            return Response({'error': 'Order not found'}, status=status.HTTP_404_NOT_FOUND)
+            return Response({'error': 'Order not found or not pending'}, status=status.HTTP_404_NOT_FOUND)
 
 # ---------------------------
-# Complete Order API (Seller Only)
+# إكمال الطلب (من قبل البائع فقط)
 # ---------------------------
 class CompleteOrderView(APIView):
     permission_classes = [permissions.IsAuthenticated]
@@ -135,10 +135,10 @@ class CompleteOrderView(APIView):
             order.save()
             return Response({'status': 'Order completed'}, status=status.HTTP_200_OK)
         except Order.DoesNotExist:
-            return Response({'error': 'Order not found'}, status=status.HTTP_404_NOT_FOUND)
+            return Response({'error': 'Order not found or not in progress'}, status=status.HTTP_404_NOT_FOUND)
 
 # ---------------------------
-# Cancel Order API (Buyer or Seller)
+# إلغاء الطلب (من قبل المشتري أو البائع)
 # ---------------------------
 class CancelOrderView(APIView):
     permission_classes = [permissions.IsAuthenticated]

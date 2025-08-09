@@ -17,7 +17,7 @@ print("\n📊 فحص البيانات الحالية:")
 print(f"- الفئات: {Category.objects.count()}")
 print(f"- المهارات النشطة: {Skill.objects.filter(status='active').count()}")
 
-# 2. إنشا�� مهارات متنوعة للاختبار
+# 2. إنشاء مهارات متنوعة للاختبار
 categories = Category.objects.all()
 users = User.objects.all()
 
@@ -94,7 +94,7 @@ if users.exists() and categories.exists():
 print(f"\n📊 إحصائيات الفلاتر:")
 print(f"- إجمالي المهارات النشطة: {Skill.objects.filter(status='active').count()}")
 
-# حسب الفئة
+# ��سب الفئة
 for category in categories:
     count = Skill.objects.filter(category=category, status='active').count()
     print(f"- {category.name}: {count} مهارة")

@@ -1,31 +1,35 @@
 #!/bin/bash
 
-echo "🧪 Testing SkillSwap with minimal configuration..."
+echo "🧪 Testing minimal Django setup..."
 
-# Set minimal settings
-export DJANGO_SETTINGS_MODULE=skillswap.settings_minimal
+# Activate virtual environment
+source venv/bin/activate
 
-# Test basic functionality
-echo "📊 Testing database connection..."
-python manage.py check --database default
+# Test minimal settings
+echo "Testing minimal settings..."
+python manage.py check --settings=skillswap.settings_minimal
 
-echo "🔍 Testing API endpoints..."
-python manage.py shell -c "
-from django.test import Client
-client = Client()
+# Create migrations
+echo "Creating migrations..."
+python manage.py makemigrations --settings=skillswap.settings_minimal
 
-# Test basic endpoints
-try:
-    response = client.get('/api/skills/')
-    print(f'✅ Skills API: {response.status_code}')
-except Exception as e:
-    print(f'❌ Skills API error: {e}')
+# Apply migrations
+echo "Applying migrations..."
+python manage.py migrate --settings=skillswap.settings_minimal
 
-try:
-    response = client.get('/api/accounts/users/')
-    print(f'✅ Users API: {response.status_code}')
-except Exception as e:
-    print(f'❌ Users API error: {e}')
-"
+# Test server startup
+echo "Testing server startup..."
+timeout 10s python manage.py runserver --settings=skillswap.settings_minimal 8001 &
+SERVER_PID=$!
 
-echo "🎉 Basic tests completed!"
+# Wait a moment for server to start
+sleep 3
+
+# Test health endpoint
+echo "Testing health endpoint..."
+curl -s http://localhost:8001/api/health/ || echo "Health check failed"
+
+# Stop server
+kill $SERVER_PID 2>/dev/null
+
+echo "✅ Minimal setup test completed!"

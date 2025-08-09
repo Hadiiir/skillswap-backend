@@ -1,7 +1,7 @@
 # Django Framework
 
 djangorestframework==3.15.2
-Django==5.0.4
+Django==5.0.6 
 
 # Authentication & JWT
 djangorestframework-simplejwt==5.3.0

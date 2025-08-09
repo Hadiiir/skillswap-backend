@@ -12,7 +12,16 @@ SECRET_KEY = config('SECRET_KEY', default='django-insecure-your-secret-key-here'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=True, cast=bool)
 
-ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='localhost,127.0.0.1,0.0.0.0', cast=lambda v: [s.strip() for s in v.split(',')])
+# Environment detection
+ENVIRONMENT = config('ENVIRONMENT', default='local')  # local, staging, production
+
+# Dynamic ALLOWED_HOSTS based on environment
+if ENVIRONMENT == 'local':
+    ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='localhost,127.0.0.1,0.0.0.0', cast=lambda v: [s.strip() for s in v.split(',')])
+elif ENVIRONMENT == 'staging':
+    ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='localhost,127.0.0.1,hadeergamal-web-01,staging.skillswap.com', cast=lambda v: [s.strip() for s in v.split(',')])
+else:  # production
+    ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='skillswap.com,www.skillswap.com', cast=lambda v: [s.strip() for s in v.split(',')])
 
 # Application definition
 DJANGO_APPS = [
@@ -27,11 +36,11 @@ DJANGO_APPS = [
 THIRD_PARTY_APPS = [
     'rest_framework',
     'rest_framework_simplejwt',
-    'rest_framework_simplejwt.token_blacklist',
     'corsheaders',
     'django_filters',
     'channels',
     'django_celery_beat',
+    'rest_framework_simplejwt.token_blacklist',
     'drf_yasg',
 ]
 
@@ -50,7 +59,7 @@ INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
-    'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -80,22 +89,44 @@ TEMPLATES = [
 WSGI_APPLICATION = 'skillswap.wsgi.application'
 ASGI_APPLICATION = 'skillswap.asgi.application'
 
-# Paymob API Keys
-PAYMOB_API_KEY = config('PAYMOB_API_KEY', default='your-paymob-key')
-
-# Stripe API
-STRIPE_SECRET_KEY = config('STRIPE_SECRET_KEY', default='your-stripe-key')
-
-# PayPal API
-PAYPAL_CLIENT_ID = config('PAYPAL_CLIENT_ID', default='your-paypal-id')
-PAYPAL_CLIENT_SECRET = config('PAYPAL_CLIENT_SECRET', default='your-paypal-secret')
-
-# Database
-DATABASES = {
-    'default': dj_database_url.config(
-        default=config('DATABASE_URL', default='postgresql://skillswap:skillswap123@localhost:5434/skillswap')
-    )
-}
+# Database Configuration based on environment
+if ENVIRONMENT == 'local':
+    # Local Database - Port 5432, database: skillswap
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': config('DB_NAME', default='skillswap'),
+            'USER': config('DB_USERNAME', default='skillswap'),
+            'PASSWORD': config('DB_PASSWORD', default='skillswap123'),
+            'HOST': config('DB_HOST', default='localhost'),
+            'PORT': config('DB_PORT', default='5432'),
+            'OPTIONS': {
+                'connect_timeout': 60,
+            },
+        }
+    }
+elif ENVIRONMENT == 'staging':
+    # Staging Database - Port 5432, database: skillswap_staging
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': config('STAGING_DB_NAME', default='skillswap_staging'),
+            'USER': config('STAGING_DB_USER', default='skillswap_staging'),
+            'PASSWORD': config('STAGING_DB_PASSWORD', default='staging_password_123'),
+            'HOST': config('STAGING_DB_HOST', default='localhost'),
+            'PORT': config('STAGING_DB_PORT', default='5432'),
+            'OPTIONS': {
+                'connect_timeout': 60,
+            },
+        }
+    }
+else:  # production
+    # Production Database
+    DATABASES = {
+        'default': dj_database_url.config(
+            default=config('DATABASE_URL', default='postgresql://skillswap:skillswap123@localhost:5432/skillswap_production')
+        )
+    }
 
 # Password validation
 AUTH_PASSWORD_VALIDATORS = [
@@ -164,21 +195,41 @@ SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=7),
     'ROTATE_REFRESH_TOKENS': True,
-    'BLACKLIST_AFTER_ROTATION': True,
+    'BLACKLIST_AFTER_ROTATION': False,
 }
 
-# CORS Configuration
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",
-    "http://127.0.0.1:3000",
-    "http://localhost:8080",
-    "http://127.0.0.1:8080",
-]
+# CORS Configuration based on environment
+if ENVIRONMENT == 'local':
+    CORS_ALLOWED_ORIGINS = [
+        "http://localhost:3000",
+        "http://127.0.0.1:3000",
+        "http://localhost:8080",
+        "http://127.0.0.1:8080",
+    ]
+elif ENVIRONMENT == 'staging':
+    CORS_ALLOWED_ORIGINS = [
+        "http://localhost:3000",
+        "http://127.0.0.1:3000",
+        "http://hadeergamal-web-01:3000",
+        "https://staging.skillswap.com",
+        "https://staging-frontend.skillswap.com",
+    ]
+else:  # production
+    CORS_ALLOWED_ORIGINS = [
+        "https://skillswap.com",
+        "https://www.skillswap.com",
+        "https://frontend.skillswap.com",
+    ]
 
 CORS_ALLOW_CREDENTIALS = True
 
-# Redis Configuration
-REDIS_URL = config('REDIS_URL', default='redis://localhost:6380/0')
+# Redis Configuration based on environment
+if ENVIRONMENT == 'local':
+    REDIS_URL = config('REDIS_URL', default='redis://localhost:6379/0')
+elif ENVIRONMENT == 'staging':
+    REDIS_URL = config('STAGING_REDIS_URL', default='redis://localhost:6379/1')
+else:  # production
+    REDIS_URL = config('REDIS_URL', default='redis://localhost:6379/0')
 
 # Cache Configuration
 CACHES = {
@@ -213,6 +264,23 @@ CHANNEL_LAYERS = {
     },
 }
 
+# Payment Gateway Settings
+PAYMOB_API_KEY = config('PAYMOB_API_KEY', default='')
+STRIPE_PUBLISHABLE_KEY = config('STRIPE_PUBLISHABLE_KEY', default='')
+STRIPE_SECRET_KEY = config('STRIPE_SECRET_KEY', default='')
+
+# Email Configuration
+if ENVIRONMENT == 'local':
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+else:
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+EMAIL_HOST = config('EMAIL_HOST', default='smtp.gmail.com')
+EMAIL_PORT = config('EMAIL_PORT', default=587, cast=int)
+EMAIL_USE_TLS = config('EMAIL_USE_TLS', default=True, cast=bool)
+EMAIL_HOST_USER = config('EMAIL_HOST_USER', default='hadeer.gamal3010@gmail.com')
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD', default='your_app_password')
+
 # Swagger Configuration
 SWAGGER_SETTINGS = {
     'SECURITY_DEFINITIONS': {
@@ -234,6 +302,7 @@ SWAGGER_SETTINGS = {
 }
 
 # Logging Configuration
+log_filename = f'{ENVIRONMENT}.log'
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
@@ -251,7 +320,7 @@ LOGGING = {
         'file': {
             'level': 'INFO',
             'class': 'logging.FileHandler',
-            'filename': BASE_DIR / 'logs' / 'django.log',
+            'filename': BASE_DIR / 'logs' / log_filename,
             'formatter': 'verbose',
         },
         'console': {
@@ -276,16 +345,8 @@ LOGGING = {
 # Create logs directory if it doesn't exist
 os.makedirs(BASE_DIR / 'logs', exist_ok=True)
 
-# Email Configuration (for production)
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-EMAIL_HOST = config('EMAIL_HOST', default='localhost')
-EMAIL_PORT = config('EMAIL_PORT', default=587, cast=int)
-EMAIL_USE_TLS = config('EMAIL_USE_TLS', default=True, cast=bool)
-EMAIL_HOST_USER = config('EMAIL_HOST_USER', default='')
-EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD', default='')
-
-# Security Settings
-if not DEBUG:
+# Security Settings based on environment
+if ENVIRONMENT == 'production':
     SECURE_BROWSER_XSS_FILTER = True
     SECURE_CONTENT_TYPE_NOSNIFF = True
     SECURE_HSTS_INCLUDE_SUBDOMAINS = True
@@ -294,3 +355,23 @@ if not DEBUG:
     SECURE_SSL_REDIRECT = True
     SESSION_COOKIE_SECURE = True
     CSRF_COOKIE_SECURE = True
+elif ENVIRONMENT == 'staging':
+    SECURE_BROWSER_XSS_FILTER = True
+    SECURE_CONTENT_TYPE_NOSNIFF = True
+    X_FRAME_OPTIONS = 'DENY'
+
+# Print current environment
+print(f"Using {ENVIRONMENT.upper()} environment settings")
+print(f"Database: {DATABASES['default']['NAME']} on port {DATABASES['default']['PORT']}")
+print(f"Redis: {REDIS_URL}")
+
+print("DB Connection:", DATABASES['default'])
+
+PAYMOB_API_KEY = config('PAYMOB_API_KEY', default='')
+PAYMOB_HMAC = config('PAYMOB_HMAC', default='')
+PAYMOB_INTEGRATION_ID = config('PAYMOB_INTEGRATION_ID', default='')
+PAYMOB_IFRAME_ID = config('PAYMOB_IFRAME_ID', default='')
+PAYMOB_BASE_URL = config('PAYMOB_BASE_URL', default='https://accept.paymobsolutions.com/api')
+PAYPAL_CLIENT_ID = os.getenv('PAYPAL_CLIENT_ID')
+PAYPAL_SECRET = os.getenv('PAYPAL_SECRET')
+

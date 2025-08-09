@@ -131,6 +131,8 @@ If you see "could not translate host name 'db'", you're trying to run Django out
 rm db.sqlite3
 rm */migrations/0*.py
 python manage.py makemigrations --settings=skillswap.settings_local
+python manage.py makemigrations --settings=skillswap.settings
+
 python manage.py migrate --settings=skillswap.settings_local
 
 # Reset migrations (Docker)
@@ -179,5 +181,7 @@ If you encounter issues:
 cd ~/skillswap-backend
 source venv/bin/activate
 python manage.py runserver
+python manage.py runserver 8001
+
 
 
