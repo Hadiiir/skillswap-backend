@@ -9,6 +9,9 @@ from rest_framework import permissions
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 
+def trigger_error(request):
+    division_by_zero = 1 / 0 
+
 # Swagger setup
 schema_view = get_schema_view(
     openapi.Info(
@@ -103,6 +106,9 @@ urlpatterns = [
     # Admin
     path('admin/', admin.site.urls),
     
+    # Sentry test error path
+    path('sentry-debug/', trigger_error),
+    
     # API Documentation
     re_path(r'^swagger(?P<format>\.json|\.yaml)$', 
             schema_view.without_ui(cache_timeout=0), name='schema-json'),
@@ -122,14 +128,14 @@ urlpatterns = [
     path('api/reviews/', include('reviews.urls')),
     path('api/notifications/', include('notifications.urls')),
     
-    # API Root
+    # API Root and Home
     path('api/', schema_view.with_ui('swagger', cache_timeout=0), 
          name='api-root'),
     path('', schema_view.with_ui('swagger', cache_timeout=0), 
          name='home'),
 ]
 
-# Static and Media files
+# Static and Media files during development
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

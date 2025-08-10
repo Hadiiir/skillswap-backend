@@ -58,6 +58,7 @@ services:
       - skillswap-network
     environment:
       - DJANGO_SETTINGS_MODULE=skillswap.settings_production
+      - DB_HOST=db
     env_file:
       - .env.production
     restart: unless-stopped
@@ -78,6 +79,7 @@ services:
     ports:
       - "80:80"
       - "443:443"
+      - "8003:8000"
     depends_on:
       - web
     networks:
@@ -99,6 +101,7 @@ services:
       - skillswap-network
     environment:
       - DJANGO_SETTINGS_MODULE=skillswap.settings_production
+      - DB_HOST=db
     env_file:
       - .env.production
     restart: unless-stopped
@@ -118,6 +121,7 @@ services:
       - skillswap-network
     environment:
       - DJANGO_SETTINGS_MODULE=skillswap.settings_production
+      - DB_HOST=db
     env_file:
       - .env.production
     restart: unless-stopped

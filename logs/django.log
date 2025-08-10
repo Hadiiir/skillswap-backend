@@ -53447,3 +53447,4 @@ INFO 2025-08-09 15:46:36,003 autoreload 1268949 133161729421440 Watching for fil
 INFO 2025-08-09 15:46:39,067 basehttp 1268949 133161564673728 "GET / HTTP/1.1" 200 1553
 INFO 2025-08-09 15:46:39,429 basehttp 1268949 133161564673728 "GET /?format=openapi HTTP/1.1" 200 38558
 INFO 2025-08-09 15:52:21,137 autoreload 1268949 133161729421440 /home/hader/skillswap-backend/skillswap/settings.py changed, reloading.
+INFO 2025-08-10 15:06:56,607 command 1 125942223313792 15 detected, shutting down

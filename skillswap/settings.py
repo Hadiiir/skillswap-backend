@@ -2,6 +2,7 @@ import os
 from pathlib import Path
 from decouple import config
 import dj_database_url
+import sentry_sdk
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -375,3 +376,7 @@ PAYMOB_BASE_URL = config('PAYMOB_BASE_URL', default='https://accept.paymobsoluti
 PAYPAL_CLIENT_ID = os.getenv('PAYPAL_CLIENT_ID')
 PAYPAL_SECRET = os.getenv('PAYPAL_SECRET')
 
+sentry_sdk.init(
+    dsn="https://928dcd8b363866a45d97cd127be04d04@o4509820325789696.ingest.de.sentry.io/4509820328214608",
+    send_default_pii=True,
+)

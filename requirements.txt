@@ -62,3 +62,4 @@ tzdata==2024.2
 python-crontab==3.2.0
 cron-descriptor==1.4.3
 gunicorn==23.0.0
+sentry-sdk

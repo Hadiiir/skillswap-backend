@@ -163,3 +163,21 @@ INFO 2025-08-09 18:19:07,166 basehttp 1447421 135208590374592 "GET /api/points/o
 INFO 2025-08-09 18:19:17,638 basehttp 1447421 135208590374592 "GET /api/points/packages/ HTTP/1.1" 200 1448
 WARNING 2025-08-09 21:04:25,473 log 1447421 135208590374592 Unauthorized: /api/accounts/login/
 WARNING 2025-08-09 21:04:25,474 basehttp 1447421 135208590374592 "POST /api/accounts/login/ HTTP/1.1" 401 183
+INFO 2025-08-10 14:48:36,665 autoreload 1447421 135208763285632 /home/hader/skillswap-backend/skillswap/settings.py changed, reloading.
+INFO 2025-08-10 14:48:37,534 autoreload 2020558 137397506932864 Watching for file changes with StatReloader
+INFO 2025-08-10 14:52:40,044 autoreload 2020558 137397506932864 /home/hader/skillswap-backend/skillswap/urls.py changed, reloading.
+INFO 2025-08-10 14:52:40,911 autoreload 2025966 125203187712128 Watching for file changes with StatReloader
+INFO 2025-08-10 14:52:44,252 autoreload 2025966 125203187712128 /home/hader/skillswap-backend/skillswap/urls.py changed, reloading.
+INFO 2025-08-10 14:52:44,989 autoreload 2026074 126797623529600 Watching for file changes with StatReloader
+INFO 2025-08-10 14:53:01,533 autoreload 2026074 126797623529600 /home/hader/skillswap-backend/skillswap/urls.py changed, reloading.
+INFO 2025-08-10 14:53:02,346 autoreload 2026506 134821405970560 Watching for file changes with StatReloader
+INFO 2025-08-10 15:20:09,800 autoreload 2065129 136203861594240 Watching for file changes with StatReloader
+INFO 2025-08-10 15:20:14,575 basehttp 2065129 136203680609984 "GET / HTTP/1.1" 200 1553
+INFO 2025-08-10 15:20:14,633 basehttp 2065129 136203680609984 "GET /static/drf-yasg/style.css HTTP/1.1" 200 1047
+INFO 2025-08-10 15:20:14,641 basehttp 2065129 136203680609984 "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 200 14964
+INFO 2025-08-10 15:20:14,644 basehttp 2065129 136203638646464 "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 200 2093
+INFO 2025-08-10 15:20:14,647 basehttp 2065129 136203630253760 "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 200 56904
+INFO 2025-08-10 15:20:14,656 basehttp 2065129 136203655431872 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 200 143858
+INFO 2025-08-10 15:20:14,661 basehttp 2065129 136203647039168 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 200 324275
+INFO 2025-08-10 15:20:14,664 basehttp 2065129 136203672217280 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 200 1086481
+INFO 2025-08-10 15:20:14,825 basehttp 2065129 136203680609984 "GET /?format=openapi HTTP/1.1" 200 38558
