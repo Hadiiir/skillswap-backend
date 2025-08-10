@@ -181,3 +181,18 @@ INFO 2025-08-10 15:20:14,656 basehttp 2065129 136203655431872 "GET /static/drf-y
 INFO 2025-08-10 15:20:14,661 basehttp 2065129 136203647039168 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 200 324275
 INFO 2025-08-10 15:20:14,664 basehttp 2065129 136203672217280 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 200 1086481
 INFO 2025-08-10 15:20:14,825 basehttp 2065129 136203680609984 "GET /?format=openapi HTTP/1.1" 200 38558
+INFO 2025-08-10 16:14:21,540 autoreload 2141935 131187803263104 Watching for file changes with StatReloader
+INFO 2025-08-10 16:14:31,699 autoreload 2142148 123436702204032 Watching for file changes with StatReloader
+INFO 2025-08-10 16:15:44,702 autoreload 2143904 132760275595392 Watching for file changes with StatReloader
+INFO 2025-08-10 16:15:49,164 autoreload 2144117 125050422612096 Watching for file changes with StatReloader
+INFO 2025-08-10 16:17:23,840 autoreload 2146287 132648767279232 Watching for file changes with StatReloader
+INFO 2025-08-10 16:17:27,579 basehttp 2146287 132648588539584 "GET / HTTP/1.1" 200 1553
+INFO 2025-08-10 16:17:27,628 basehttp 2146287 132648588539584 "GET /static/drf-yasg/style.css HTTP/1.1" 200 1047
+INFO 2025-08-10 16:17:27,631 basehttp 2146287 132648546576064 "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 200 2093
+INFO 2025-08-10 16:17:27,633 basehttp 2146287 132648538183360 "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 200 56904
+INFO 2025-08-10 16:17:27,634 basehttp 2146287 132648580146880 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 200 143858
+INFO 2025-08-10 16:17:27,637 basehttp 2146287 132648546576064 "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 200 14964
+INFO 2025-08-10 16:17:27,637 basehttp 2146287 132648554968768 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 200 324275
+INFO 2025-08-10 16:17:27,640 basehttp 2146287 132648563361472 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 200 1086481
+INFO 2025-08-10 16:17:27,819 basehttp 2146287 132648563361472 "GET /?format=openapi HTTP/1.1" 200 38558
+INFO 2025-08-10 16:17:58,699 basehttp 2146287 132648563361472 "POST /api/accounts/login/ HTTP/1.1" 200 2474

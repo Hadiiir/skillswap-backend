@@ -81,7 +81,8 @@ services:
       - "443:443"
       - "8003:8000"
     depends_on:
-      - web
+      web:
+        condition: service_healthy
     networks:
       - skillswap-network
     restart: unless-stopped
@@ -95,8 +96,12 @@ services:
     volumes:
       - ./logs:/app/logs
     depends_on:
-      - db
-      - redis
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      web:
+        condition: service_healthy
     networks:
       - skillswap-network
     environment:
@@ -105,6 +110,8 @@ services:
     env_file:
       - .env.production
     restart: unless-stopped
+    healthcheck:
+      disable: true
 
   celery-beat:
     build: 
@@ -115,8 +122,12 @@ services:
     volumes:
       - ./logs:/app/logs
     depends_on:
-      - db
-      - redis
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      web:
+        condition: service_healthy
     networks:
       - skillswap-network
     environment:
@@ -125,6 +136,8 @@ services:
     env_file:
       - .env.production
     restart: unless-stopped
+    healthcheck:
+      disable: true
 
 volumes:
   postgres_data_prod:
@@ -134,3 +147,4 @@ volumes:
 networks:
   skillswap-network:
     driver: bridge
+    
