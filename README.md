@@ -228,6 +228,7 @@ Docker & Docker Compose (recommended)
 ⚡ Quick Start
 Option 1: Docker (Recommended)
 git clone https://github.com/Hadiiir/skillswap-backend.git
+
 cd skillswap-backend
 cp .env.example .env  # then configure it
 
@@ -260,6 +261,10 @@ celery -A skillswap worker -l info
 
 
 🧱 Database Schema (ERD)
+
+https://dbdiagram.io/d/68804325cca18e685c3e9900
+
+
 +--------------------+          +--------------------+           +------------------------+
 |       User         |◄────────►|      Skill         |◄─────────►|     SkillCategory      |
 +--------------------+          +--------------------+           +------------------------+
