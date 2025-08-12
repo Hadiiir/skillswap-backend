@@ -33,7 +33,7 @@ echo "🔌 Port: 5432 (same as local, but different database)"
 echo "👤 User: skillswap_staging"
 echo "🔑 Password: staging_password_123"
 
-# Test connection
+# Test connectionh
 echo "Testing connection..."
 PGPASSWORD=staging_password_123 psql -h localhost -p 5432 -U skillswap_staging -d skillswap_staging -c "SELECT 'Staging DB Connected Successfully!' as status;" && echo "✅ Connection successful!" || echo "❌ Connection failed!"
 
